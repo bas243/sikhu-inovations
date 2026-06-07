@@ -237,6 +237,31 @@ img{max-width:100%}
 .feat-strip-card.ap:hover{border-color:var(--o);transform:translateY(-3px);box-shadow:var(--sh)}
 .fsc-name{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;letter-spacing:.8px;color:var(--n);margin-bottom:5px}
 .fsc-sub{font-size:13.5px;color:var(--mu);margin-bottom:18px}
+/* ══ HAMBURGER BUTTON ═══════════════════════════════════ */
+.ham{display:none;flex-direction:column;gap:5px;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);align-items:center;justify-content:center;cursor:pointer;transition:background .18s;flex-shrink:0}
+.ham:hover{background:var(--o)}
+.ham span{width:18px;height:2px;background:#fff;border-radius:2px;transition:all .28s;display:block}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* ══ MOBILE DRAWER ═══════════════════════════════════════ */
+.mob-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:190;opacity:0;transition:opacity .28s;pointer-events:none}
+.mob-ov.open{opacity:1;pointer-events:all}
+.mob-drawer{position:fixed;top:0;right:-100%;width:280px;max-width:85vw;height:100%;background:var(--n);z-index:195;transition:right .3s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding-bottom:40px;border-left:1px solid rgba(255,255,255,.08);box-shadow:-8px 0 40px rgba(0,0,0,.35)}
+.mob-drawer.open{right:0}
+.mob-d-head{display:flex;align-items:center;justify-content:space-between;padding:0 18px;height:64px;border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-d-logo{font-family:'Syne',sans-serif;color:#fff;font-size:14px;font-weight:700;line-height:1.2}
+.mob-d-logo small{display:block;font-size:10px;font-weight:400;color:rgba(255,255,255,.38)}
+.mob-close{width:32px;height:32px;border-radius:7px;border:1px solid rgba(255,255,255,.15);background:transparent;color:rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .16s}
+.mob-close:hover{background:rgba(255,255,255,.1);color:#fff}
+.mob-nav{padding:14px 12px;display:flex;flex-direction:column;gap:3px}
+.mob-nav a{display:block;color:rgba(255,255,255,.7);font-size:15px;font-weight:500;padding:12px 16px;border-radius:8px;transition:all .18s;text-decoration:none}
+.mob-nav a:hover,.mob-nav a.act{color:#fff;background:rgba(255,255,255,.1)}
+.mob-nav a.brand-link{color:rgba(232,82,26,.9)}
+.mob-nav a.brand-link:hover,.mob-nav a.brand-link.act{color:#fff;background:var(--o)}
+.mob-divider{height:1px;background:rgba(255,255,255,.07);margin:10px 12px}
+.mob-d-cart{margin:12px 12px 0;padding:14px 16px;background:var(--o);border-radius:8px;color:#fff;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:background .18s;border:none;width:calc(100% - 24px);font-family:'DM Sans',sans-serif}
+.mob-d-cart:hover{background:var(--o2)}
 /* ══ RESPONSIVE ══════════════════════════════════════════ */
 @media(max-width:1100px){.g4{grid-template-columns:repeat(3,1fr)}.pd-layout{grid-template-columns:1fr}}
 @media(max-width:900px){
@@ -244,17 +269,86 @@ img{max-width:100%}
   .hero-visual{display:none}
   .cart-layout{grid-template-columns:1fr}
   .order-box{position:static}
-  .pd-img-box{position:static}
+  .pd-img-box{position:static;min-height:220px;padding:28px}
   .footer-g{grid-template-columns:1fr 1fr;gap:28px}
+  .pd-layout{gap:28px}
+  .abt-layout{gap:40px}
+  .ct-layout{gap:36px}
 }
 @media(max-width:768px){
-  .g4{grid-template-columns:repeat(2,1fr)}
+  .con{padding:0 16px}
+  .sec{padding:48px 0}
+  .sec-sm{padding:32px 0}
+  .sec-dk{padding:48px 0}
+  .g4{grid-template-columns:repeat(2,1fr);gap:12px}
+  .g2,.g3{grid-template-columns:1fr;gap:16px}
+  .mv-g{grid-template-columns:1fr 1fr;gap:10px}
+  .why-g{grid-template-columns:1fr;gap:8px}
   .fbar-g{grid-template-columns:repeat(2,1fr)}
   .f-item:nth-child(2){border-right:none}
-  .g2,.g3,.mv-g,.why-g{grid-template-columns:1fr}
+  .f-item:nth-child(3){border-top:1px solid var(--bd)}
+  .f-item:nth-child(4){border-top:1px solid var(--bd)}
+  .f-item{padding:16px 18px}
   .nav-links,.nav-email{display:none}
+  .ham{display:flex}
+  .mob-ov{display:block}
+  .pg-hero{padding:40px 0 36px}
+  .pg-hero h1{font-size:clamp(26px,7vw,40px);letter-spacing:-.5px}
+  .pg-hero p{font-size:14px;margin-bottom:22px;max-width:100%}
+  .hero-stats{gap:20px;flex-wrap:wrap;padding-top:20px;margin-top:24px}
+  .hs-n{font-size:20px}
+  .hero-badge{font-size:11px;padding:4px 10px}
+  .brand-card{padding:22px}
+  .bc-name{font-size:26px}
+  .bc-stats{gap:16px}
+  .feat-strip{grid-template-columns:1fr;gap:12px}
+  .feat-strip-card{padding:20px}
+  .fsc-name{font-size:22px}
+  .spec-g{grid-template-columns:repeat(3,1fr);gap:8px}
+  .pd-name{font-size:22px}
+  .pd-desc{font-size:14px;margin-bottom:18px;padding-bottom:18px}
+  .filters{width:100%}
+  .f-btn{padding:7px 12px;font-size:12px}
+  .cart-item{padding:14px;gap:12px}
+  .ci-thumb{width:60px;height:60px}
+  .ci-name{font-size:13px}
+  .order-box{padding:18px}
+  .footer-g{grid-template-columns:1fr 1fr;gap:24px}
+  .footer-bot{padding:16px;flex-direction:column;text-align:center;gap:6px;margin-top:24px}
+  .pc-img{height:148px}
+  .pc-name{font-size:13px}
+  .cf-box{padding:20px}
+  .bc-sub{font-size:12.5px}
+  .s-tit{font-size:clamp(22px,5vw,30px)}
+  .btn-lg{padding:13px 24px;font-size:14px}
 }
-@media(max-width:480px){.g4{grid-template-columns:1fr}.footer-g{grid-template-columns:1fr}.frow2{grid-template-columns:1fr}}
+@media(max-width:480px){
+  .con{padding:0 14px}
+  .g4{grid-template-columns:1fr;gap:12px}
+  .mv-g{grid-template-columns:1fr}
+  .frow2{grid-template-columns:1fr}
+  .footer-g{grid-template-columns:1fr;gap:20px}
+  .spec-g{grid-template-columns:repeat(2,1fr)}
+  .fbar-g{grid-template-columns:1fr}
+  .f-item{border-right:none;border-bottom:1px solid var(--bd)}
+  .f-item:last-child{border-bottom:none}
+  .f-item:nth-child(3),.f-item:nth-child(4){border-top:none}
+  .hero-stats{gap:16px}
+  .hs-n{font-size:18px}
+  .pd-btns{flex-direction:column}
+  .pd-price{font-size:28px}
+  .nav-in{padding:0 14px;gap:14px}
+  .bc-stats{flex-wrap:wrap;gap:12px}
+  .feat-strip-card{padding:16px}
+  .brand-card{padding:18px}
+  .cf-box{padding:16px}
+  .order-box{padding:14px}
+}
+@media(max-width:360px){
+  .pg-hero h1{font-size:24px}
+  .g4{grid-template-columns:1fr}
+  .pc-img{height:130px}
+}
 </style>
 </head>
 <body>
@@ -289,9 +383,37 @@ img{max-width:100%}
         </svg>
         <span class="c-badge" id="c-badge">0</span>
       </button>
+      <button class="ham" id="ham-btn" onclick="toggleMobNav()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </nav>
+
+<!-- ═══ MOBILE NAV OVERLAY + DRAWER ═══ -->
+<div class="mob-ov" id="mob-ov" onclick="closeMobNav()"></div>
+<div class="mob-drawer" id="mob-drawer">
+  <div class="mob-d-head">
+    <div class="mob-d-logo">Sikhu Innovations<small>Pvt. Ltd.</small></div>
+    <button class="mob-close" onclick="closeMobNav()">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav class="mob-nav">
+    <a href="#home" onclick="go('home');closeMobNav()" data-mp="home">🏠 Home</a>
+    <a href="#products" onclick="go('products');closeMobNav()" data-mp="products">📦 All Products</a>
+    <div class="mob-divider"></div>
+    <a href="#apexo" onclick="go('apexo');closeMobNav()" data-mp="apexo" class="brand-link">⚡ APEXO</a>
+    <a href="#vivotek" onclick="go('vivotek');closeMobNav()" data-mp="vivotek" class="brand-link">💧 VIVOTEK</a>
+    <div class="mob-divider"></div>
+    <a href="#about" onclick="go('about');closeMobNav()" data-mp="about">🏢 About Us</a>
+    <a href="#contact" onclick="go('contact');closeMobNav()" data-mp="contact">✉️ Contact</a>
+  </nav>
+  <button class="mob-d-cart" onclick="go('cart');closeMobNav()">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    View Cart
+  </button>
+</div>
 
 <!-- ═══ APP (dynamic) ═══ -->
 <main id="app"></main>
@@ -1164,6 +1286,25 @@ function showToast(msg){
   clearTimeout(_toastTimer);
   _toastTimer = setTimeout(()=>el.classList.remove('show'), 3400);
 }
+
+/* ══ MOBILE NAV ══ */
+function toggleMobNav(){
+  const btn=document.getElementById('ham-btn');
+  const drawer=document.getElementById('mob-drawer');
+  const ov=document.getElementById('mob-ov');
+  const open=drawer.classList.toggle('open');
+  btn.classList.toggle('open',open);
+  ov.classList.toggle('open',open);
+  document.body.style.overflow=open?'hidden':'';
+}
+function closeMobNav(){
+  document.getElementById('ham-btn')?.classList.remove('open');
+  document.getElementById('mob-drawer')?.classList.remove('open');
+  document.getElementById('mob-ov')?.classList.remove('open');
+  document.body.style.overflow='';
+}
+// Close drawer on hash change (page navigation)
+window.addEventListener('hashchange',closeMobNav);
 
 /* ══ INIT ══ */
 refreshBadge();
