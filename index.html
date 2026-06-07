@@ -3,999 +3,1170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AssessmentHelp — Expert Assessment Writing Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Sikhu Innovations Pvt. Ltd. — APEXO &amp; VIVOTEK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+/* ══ VARIABLES ══════════════════════════════════════════ */
 :root{
-  --blue:#1D6FDB;
-  --blue-dark:#1558B0;
-  --blue-light:#EBF3FF;
-  --blue-mid:#3B82F6;
-  --dark:#1E2337;
-  --dark2:#252A40;
-  --text:#2D3748;
-  --muted:#6B7280;
-  --border:#E5E7EB;
-  --white:#fff;
-  --ff:'Inter',sans-serif;
+  --n:#0D1B3E;   /* Navy  */
+  --o:#E8521A;   /* Orange */
+  --o2:#c44313;
+  --w:#fff;
+  --bg:#F6F8FC;
+  --bd:#E3E9F2;
+  --mu:#6B7A99;
+  --lm:#99AABF;
+  --sh:0 4px 24px rgba(13,27,62,.09);
+  --sh2:0 12px 48px rgba(13,27,62,.14);
 }
+/* ══ RESET ══════════════════════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--ff);color:var(--text);background:#fff;overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;color:var(--n);background:var(--bg);overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-ul{list-style:none}
+button{cursor:pointer;font-family:inherit;border:none}
 img{max-width:100%}
-
-/* ── SCROLLBAR ── */
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:#f1f1f1}
-::-webkit-scrollbar-thumb{background:var(--blue);border-radius:3px}
-
-/* ── NAV ── */
-header{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  background:#fff;
-  box-shadow:0 1px 12px rgba(0,0,0,0.08);
-}
-.nav-wrap{
-  max-width:1280px;margin:0 auto;
-  padding:0 24px;
-  display:flex;align-items:center;gap:8px;height:70px;
-}
-.logo{
-  display:flex;align-items:center;gap:8px;
-  font-weight:800;font-size:1.1rem;color:var(--dark);
-  margin-right:16px;white-space:nowrap;flex-shrink:0;
-}
-.logo-icon{
-  width:40px;height:40px;background:var(--blue);border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:1.1rem;font-weight:800;
-}
-.logo small{display:block;font-size:0.55rem;font-weight:400;color:var(--muted);line-height:1}
-nav{display:flex;align-items:center;gap:4px;flex:1}
-.nav-link{
-  padding:8px 12px;border-radius:6px;font-size:0.88rem;font-weight:500;
-  color:var(--text);white-space:nowrap;cursor:pointer;
-  display:flex;align-items:center;gap:4px;position:relative;
-  transition:color 0.15s,background 0.15s;
-}
-.nav-link:hover,.nav-link.active{color:var(--blue);background:var(--blue-light)}
-.nav-link svg{width:14px;height:14px;transition:transform 0.2s}
-.nav-link:hover svg{transform:rotate(180deg)}
-/* dropdown */
-.dropdown{position:relative}
-.dropdown-menu{
-  position:absolute;top:calc(100% + 8px);left:0;
-  background:#fff;border-radius:10px;
-  box-shadow:0 8px 30px rgba(0,0,0,0.12);
-  border:1px solid var(--border);
-  min-width:560px;padding:12px;
-  display:grid;grid-template-columns:1fr 1fr;gap:4px;
-  opacity:0;visibility:hidden;transform:translateY(-8px);
-  transition:all 0.2s;pointer-events:none;
-}
-.dropdown:hover .dropdown-menu,.dropdown-menu:hover{
-  opacity:1;visibility:visible;transform:translateY(0);pointer-events:all;
-}
-.dropdown-item{
-  padding:10px 14px;border-radius:6px;font-size:0.87rem;font-weight:500;
-  color:var(--text);cursor:pointer;transition:all 0.15s;
-}
-.dropdown-item:hover{background:var(--blue-light);color:var(--blue)}
-.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0}
-.btn-wa{
-  display:flex;align-items:center;gap:6px;
-  padding:8px 14px;border-radius:6px;font-size:0.85rem;font-weight:500;
-  color:var(--text);border:1px solid var(--border);
-  transition:all 0.15s;cursor:pointer;background:#fff;
-}
-.btn-wa:hover{background:var(--blue-light);border-color:var(--blue);color:var(--blue)}
-.btn-quote{
-  background:var(--blue);color:#fff;
-  padding:10px 20px;border-radius:6px;font-size:0.88rem;font-weight:600;
-  border:none;cursor:pointer;transition:background 0.15s;white-space:nowrap;
-}
-.btn-quote:hover{background:var(--blue-dark)}
-
-/* ── HERO ── */
-.hero{
-  padding:110px 24px 60px;
-  max-width:1280px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:center;
-}
-.hero-left{}
-.hero-h1{
-  font-size:clamp(2rem,3.5vw,2.8rem);
-  font-weight:800;line-height:1.18;color:var(--dark);
-  margin-bottom:20px;
-}
-.hero-h1 span{color:var(--blue)}
-.hero-sub{
-  font-size:1rem;color:var(--muted);line-height:1.7;
-  max-width:520px;margin-bottom:28px;
-}
-.ratings{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:36px}
-.rating-item{display:flex;align-items:center;gap:8px}
-.stars{color:#F59E0B;font-size:0.95rem;letter-spacing:1px}
-.rating-text{font-size:0.85rem;font-weight:600;color:var(--dark)}
-.rating-src{font-size:0.78rem;color:var(--muted)}
-.trust-badges{display:flex;gap:12px;flex-wrap:wrap}
-.badge{
-  display:flex;align-items:center;gap:8px;
-  border:1px solid var(--border);border-radius:8px;
-  padding:12px 16px;background:#fff;
-  box-shadow:0 1px 4px rgba(0,0,0,0.05);
-  font-size:0.83rem;font-weight:500;color:var(--dark);
-}
-.badge-icon{color:var(--blue);font-size:1.1rem}
-
-/* ── QUOTE CARD ── */
-.quote-card{
-  background:#fff;border-radius:14px;
-  box-shadow:0 8px 40px rgba(0,0,0,0.12);
-  border:1px solid var(--border);
-  padding:28px;
-}
-.quote-card-head{
-  background:var(--blue);color:#fff;border-radius:8px;
-  padding:14px 18px;margin-bottom:20px;text-align:center;
-  font-weight:700;font-size:1rem;
-}
-.quote-card-sub{font-size:0.82rem;opacity:0.85;font-weight:400;margin-top:3px}
-.form-group{margin-bottom:12px}
-.form-group label{display:block;font-size:0.8rem;font-weight:600;color:var(--dark);margin-bottom:5px}
-.form-group input,.form-group select{
-  width:100%;border:1px solid var(--border);border-radius:7px;
-  padding:11px 14px;font-size:0.88rem;font-family:var(--ff);
-  color:var(--dark);background:#fff;outline:none;
-  transition:border-color 0.15s;
-}
-.form-group input:focus,.form-group select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,111,219,0.1)}
-.form-row{display:grid;grid-template-columns:120px 1fr;gap:8px}
-.btn-submit{
-  width:100%;background:var(--blue);color:#fff;
-  border:none;border-radius:7px;padding:13px;
-  font-size:0.95rem;font-weight:700;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  transition:background 0.15s;margin-bottom:10px;
-}
-.btn-submit:hover{background:var(--blue-dark)}
-.form-trust{
-  display:flex;gap:14px;justify-content:center;
-  font-size:0.74rem;color:var(--muted);
-}
-.form-trust span::before{content:'✓ ';color:var(--blue)}
-.card-stats{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  border-top:1px solid var(--border);margin-top:16px;padding-top:16px;
-  text-align:center;gap:8px;
-}
-.cstat-num{font-size:1.3rem;font-weight:800;color:var(--blue)}
-.cstat-label{font-size:0.72rem;color:var(--muted)}
-
-/* ── TICKER ── */
-.ticker-wrap{
-  background:var(--blue);padding:14px 0;overflow:hidden;
-  border-top:1px solid rgba(255,255,255,0.1);
-}
-.ticker{display:flex;gap:0;animation:tickerMove 25s linear infinite;white-space:nowrap}
-.ticker:hover{animation-play-state:paused}
-@keyframes tickerMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.ticker-item{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:0 28px;color:#fff;font-size:0.85rem;font-weight:500;
-}
-.ticker-item::after{content:'•';margin-left:28px;opacity:0.6}
-
-/* ── SECTIONS ── */
-section{padding:80px 24px}
-.container{max-width:1200px;margin:0 auto}
-.section-title{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:800;color:var(--dark);margin-bottom:12px;text-align:center}
-.section-sub{text-align:center;color:var(--muted);font-size:0.95rem;max-width:540px;margin:0 auto 48px}
-
-/* ── FEATURE (no AI) ── */
-.feature-split{
-  display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;
-}
-.feature-visual{
-  display:flex;align-items:center;justify-content:center;
-  position:relative;
-}
-.feature-circle-outer{
-  width:300px;height:300px;border-radius:50%;
-  background:rgba(29,111,219,0.07);
-  display:flex;align-items:center;justify-content:center;
-}
-.feature-circle-inner{
-  width:200px;height:200px;border-radius:50%;
-  background:rgba(29,111,219,0.12);
-  display:flex;align-items:center;justify-content:center;
-  font-size:4rem;
-}
-.feature-badge-float{
-  position:absolute;bottom:20px;right:0;
-  background:#fff;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.1);
-  padding:10px 16px;font-size:0.82rem;font-weight:600;color:var(--dark);
-  display:flex;align-items:center;gap:8px;
-  animation:floatBadge 3s ease-in-out infinite;
-}
-@keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.feature-badge-float::before{content:'✓';color:var(--blue);font-weight:800}
-.feature-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 28px}
-.feature-list li{display:flex;align-items:center;gap:8px;font-size:0.88rem;color:var(--text)}
-.feature-list li::before{content:'✓';color:var(--blue);font-weight:700;flex-shrink:0}
-.feature-h2{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;color:var(--dark);margin-bottom:14px}
-.feature-h2 span{color:var(--blue)}
-.feature-p{color:var(--muted);font-size:0.95rem;line-height:1.7;margin-bottom:20px}
-.btn-chat{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--blue);color:#fff;padding:12px 24px;border-radius:7px;
-  font-weight:600;font-size:0.9rem;cursor:pointer;border:none;
-  transition:background 0.15s;
-}
-.btn-chat:hover{background:var(--blue-dark)}
-
-/* ── PROCESS ── */
-#process{background:#F8FAFF}
-.process-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-  position:relative;
-}
-.process-arrow{
-  position:absolute;top:40px;left:calc(33.33% - 10px);
-  color:var(--blue);font-size:1.3rem;z-index:1;
-}
-.process-arrow:last-of-type{left:calc(66.66% - 10px)}
-.process-card{
-  background:#fff;border-radius:12px;padding:32px 28px;
-  border:1px solid var(--border);text-align:center;
-  transition:box-shadow 0.2s,transform 0.2s;
-  position:relative;
-}
-.process-card:hover{box-shadow:0 8px 30px rgba(29,111,219,0.12);transform:translateY(-3px)}
-.process-num{
-  width:48px;height:48px;border-radius:50%;
-  background:var(--blue-light);color:var(--blue);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.3rem;margin:0 auto 16px;
-}
-.process-card h3{font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:10px}
-.process-card p{font-size:0.85rem;color:var(--muted);line-height:1.65}
-.process-connector{
-  display:flex;align-items:center;justify-content:center;
-  color:var(--blue);font-size:1.4rem;margin-top:40px;
-}
-
-/* ── BLUE CTA BAND ── */
-.cta-band{
-  background:var(--blue);color:#fff;
-  padding:70px 24px;text-align:center;
-}
-.cta-band h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:16px}
-.cta-band p{opacity:0.85;margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto}
-.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.btn-white{
-  background:#fff;color:var(--blue);
-  padding:13px 28px;border-radius:7px;
-  font-weight:700;font-size:0.95rem;
-  display:inline-flex;align-items:center;gap:8px;
-  border:none;cursor:pointer;transition:opacity 0.15s;
-}
-.btn-white:hover{opacity:0.9}
-.btn-outline-white{
-  background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.6);
-  padding:13px 28px;border-radius:7px;
-  font-weight:600;font-size:0.95rem;
-  display:inline-flex;align-items:center;gap:8px;
-  cursor:pointer;transition:border-color 0.15s;
-}
-.btn-outline-white:hover{border-color:#fff}
-
-/* ── PRICING ── */
-.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px;margin:0 auto}
-.pricing-card{
-  border:1px solid var(--border);border-radius:12px;
-  padding:32px;background:#fff;
-}
-.pricing-card.featured{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
-.pricing-card h3{font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:20px}
-.pricing-card h3 span{color:var(--blue)}
-.price-row{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:10px 0;border-bottom:1px solid #F3F4F6;
-  font-size:0.88rem;
-}
-.price-row:last-of-type{border-bottom:none}
-.price-label{color:var(--text);display:flex;align-items:center;gap:8px}
-.price-label::before{content:'✓';color:var(--blue);font-weight:700}
-.price-val{font-weight:700;color:var(--blue);font-size:0.85rem}
-.addon-row{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:10px 0;border-bottom:1px solid #F3F4F6;font-size:0.88rem;
-}
-.addon-label{display:flex;align-items:center;gap:6px;color:var(--text)}
-.addon-label::before{content:'+';color:var(--blue);font-weight:700}
-.addon-price{font-weight:600;color:var(--muted)}
-.pricing-from{text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
-.pricing-from small{color:var(--muted);font-size:0.78rem}
-.pricing-price{font-size:2rem;font-weight:800;color:var(--blue)}
-.pricing-per{font-size:0.85rem;color:var(--muted)}
-.pricing-cta{margin-top:32px;text-align:center}
-.pricing-cta-card{
-  background:var(--blue-light);border-radius:10px;padding:24px;
-  text-align:center;max-width:480px;margin:28px auto 0;
-}
-.pricing-cta-card p{font-size:0.9rem;color:var(--dark);font-weight:500;margin-bottom:14px}
-
-/* ── BENEFITS ── */
-#benefits{background:#F8FAFF}
-.benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.benefit-card{
-  background:#fff;border:1px solid var(--border);border-radius:12px;
-  padding:28px 24px;transition:box-shadow 0.2s,transform 0.2s;
-}
-.benefit-card:hover{box-shadow:0 6px 24px rgba(29,111,219,0.1);transform:translateY(-2px)}
-.benefit-icon{
-  width:48px;height:48px;background:var(--blue-light);border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.3rem;margin-bottom:14px;
-}
-.benefit-card h3{font-size:0.95rem;font-weight:700;color:var(--dark);margin-bottom:8px}
-.benefit-card p{font-size:0.83rem;color:var(--muted);line-height:1.6}
-
-/* ── FAQ ── */
-.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
-.faq-item{
-  border:1px solid var(--border);border-radius:10px;overflow:hidden;
-  transition:border-color 0.2s;
-}
-.faq-item.open{border-color:var(--blue)}
-.faq-q{
-  padding:18px 20px;cursor:pointer;font-weight:600;font-size:0.93rem;color:var(--dark);
-  display:flex;justify-content:space-between;align-items:center;
-  user-select:none;background:#fff;
-}
-.faq-q:hover{background:var(--blue-light)}
-.faq-icon{
-  width:24px;height:24px;border-radius:50%;background:var(--blue-light);
-  color:var(--blue);display:flex;align-items:center;justify-content:center;
-  font-size:1rem;transition:transform 0.2s;flex-shrink:0;
-}
-.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--blue);color:#fff}
-.faq-a{
-  max-height:0;overflow:hidden;transition:max-height 0.3s ease;
-  background:#fff;
-}
-.faq-a-inner{padding:0 20px 18px;font-size:0.88rem;color:var(--muted);line-height:1.7}
-.faq-item.open .faq-a{max-height:200px}
-
-/* ── FOOTER ── */
-footer{background:var(--dark);color:#fff;padding:60px 24px 0}
-.footer-grid{
-  max-width:1200px;margin:0 auto;
-  display:grid;grid-template-columns:260px 1fr 1fr 1fr 1fr;gap:40px;
-  padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);
-}
-.footer-brand{}
-.footer-logo{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.footer-logo .logo-icon{background:var(--blue)}
-.footer-tagline{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.65;margin-bottom:20px}
-.social-icons{display:flex;gap:10px}
-.social-icon{
-  width:34px;height:34px;border-radius:6px;
-  border:1px solid rgba(255,255,255,0.12);
-  display:flex;align-items:center;justify-content:center;
-  font-size:0.85rem;color:rgba(255,255,255,0.6);
-  cursor:pointer;transition:all 0.15s;
-}
-.social-icon:hover{background:var(--blue);border-color:var(--blue);color:#fff}
-.footer-col h4{font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:0.04em;text-transform:uppercase}
-.footer-col ul li{margin-bottom:10px}
-.footer-col ul a{font-size:0.83rem;color:rgba(255,255,255,0.5);transition:color 0.15s}
-.footer-col ul a:hover{color:#fff}
-.footer-contact-item{
-  display:flex;align-items:flex-start;gap:10px;
-  font-size:0.82rem;color:rgba(255,255,255,0.55);margin-bottom:12px;
-}
-.fc-icon{color:var(--blue);flex-shrink:0;margin-top:2px;font-size:0.9rem}
-.footer-wa-btn{
-  display:inline-flex;align-items:center;gap:8px;
-  background:#25D366;color:#fff;padding:10px 18px;border-radius:6px;
-  font-size:0.83rem;font-weight:600;margin-top:8px;cursor:pointer;
-  transition:background 0.15s;border:none;
-}
-.footer-wa-btn:hover{background:#1EBE5A}
-.footer-bottom{
-  max-width:1200px;margin:0 auto;
-  padding:20px 0;display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:12px;
-}
-.footer-bottom p{font-size:0.78rem;color:rgba(255,255,255,0.35)}
-.footer-trust{display:flex;gap:20px;flex-wrap:wrap}
-.footer-trust-item{
-  display:flex;align-items:center;gap:6px;
-  font-size:0.75rem;color:rgba(255,255,255,0.35);
-}
-.footer-trust-item::before{content:'🔒';font-size:0.8rem}
-
-/* ── FLOATING WHATSAPP ── */
-.float-wa{
-  position:fixed;bottom:24px;left:20px;z-index:900;
-  display:flex;align-items:flex-end;gap:10px;
-}
-.float-wa-btn{
-  width:52px;height:52px;border-radius:50%;background:#25D366;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 20px rgba(0,0,0,0.2);cursor:pointer;
-  animation:waPulse 2.5s ease-in-out infinite;border:none;
-}
-@keyframes waPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,0.4)}70%{box-shadow:0 0 0 10px rgba(37,211,102,0)}}
-.float-wa-btn svg{width:28px;height:28px;fill:#fff}
-.float-wa-label{
-  background:#fff;border-radius:6px 6px 6px 0;
-  box-shadow:0 2px 12px rgba(0,0,0,0.1);
-  padding:8px 14px;font-size:0.82rem;font-weight:600;color:var(--dark);
-  animation:fadeInLeft 0.4s ease;cursor:pointer;
-  display:flex;align-items:center;gap:6px;
-}
-.float-wa-label .x-btn{
-  width:16px;height:16px;border-radius:50%;background:#f3f4f6;
-  display:flex;align-items:center;justify-content:center;
-  font-size:0.65rem;cursor:pointer;color:var(--muted);margin-left:4px;
-  flex-shrink:0;
-}
-@keyframes fadeInLeft{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
-.float-wa-label.hidden{display:none}
-
-/* ── SCROLL ANIMATIONS ── */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity 0.6s ease,transform 0.6s ease}
-.reveal-left.visible{opacity:1;transform:translateX(0)}
-.reveal-right{opacity:0;transform:translateX(30px);transition:opacity 0.6s ease,transform 0.6s ease}
-.reveal-right.visible{opacity:1;transform:translateX(0)}
-
-/* ── COUNTER ── */
-.counter{display:inline-block}
-
-/* ── RESPONSIVE ── */
-@media(max-width:1024px){
-  .hero{grid-template-columns:1fr;max-width:680px}
-  .quote-card{max-width:480px}
-  .feature-split{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
-  .benefits-grid{grid-template-columns:repeat(2,1fr)}
+/* ══ LAYOUT ═════════════════════════════════════════════ */
+.con{max-width:1200px;margin:0 auto;padding:0 28px}
+.sec{padding:72px 0}
+.sec-sm{padding:48px 0}
+.sec-dk{padding:72px 0;background:var(--n)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.flex{display:flex;align-items:center}
+.flex-b{display:flex;align-items:center;justify-content:space-between}
+.gap8{gap:8px}.gap12{gap:12px}.gap16{gap:16px}
+/* ══ TYPOGRAPHY ═════════════════════════════════════════ */
+.s-tag{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--o);margin-bottom:9px;display:block}
+.s-tit{font-family:'Syne',sans-serif;font-size:clamp(24px,3vw,34px);font-weight:800;color:var(--n);letter-spacing:-.5px}
+.s-tit-w{font-family:'Syne',sans-serif;font-size:clamp(24px,3vw,34px);font-weight:800;color:var(--w);letter-spacing:-.5px}
+.syne{font-family:'Syne',sans-serif}
+/* ══ BUTTONS ════════════════════════════════════════════ */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .18s;border:none;text-decoration:none;font-family:'DM Sans',sans-serif}
+.btn-p{background:var(--o);color:var(--w)}.btn-p:hover{background:var(--o2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,82,26,.3)}
+.btn-n{background:var(--n);color:var(--w)}.btn-n:hover{opacity:.85;transform:translateY(-1px)}
+.btn-ol{background:transparent;color:var(--n);border:1.5px solid var(--bd)}.btn-ol:hover{border-color:var(--n);background:rgba(13,27,62,.04)}
+.btn-olw{background:transparent;color:var(--w);border:1.5px solid rgba(255,255,255,.3)}.btn-olw:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.6)}
+.btn-lg{padding:14px 30px;font-size:15.5px}
+.btn-sm{padding:7px 15px;font-size:13px}
+.btn-full{width:100%;justify-content:center}
+/* ══ NAVBAR ═════════════════════════════════════════════ */
+.nav{position:sticky;top:0;z-index:200;background:var(--n);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-in{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;gap:28px}
+.nav-logo{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.nav-logo-svg{width:42px;height:42px;flex-shrink:0}
+.nav-logo-txt{font-family:'Syne',sans-serif;color:var(--w);font-size:14px;font-weight:700;line-height:1.25}
+.nav-logo-txt small{display:block;font-size:10px;font-weight:400;color:rgba(255,255,255,.38);letter-spacing:.3px}
+.nav-links{display:flex;list-style:none;gap:2px;flex:1}
+.nav-links a{display:block;color:rgba(255,255,255,.6);font-size:13.5px;font-weight:500;padding:7px 12px;border-radius:7px;transition:all .18s}
+.nav-links a:hover,.nav-links a.act{color:var(--w);background:rgba(255,255,255,.1)}
+.nav-links a.brand-link{color:rgba(232,82,26,.85)}
+.nav-links a.brand-link:hover,.nav-links a.brand-link.act{color:var(--w);background:var(--o)}
+.nav-r{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0}
+.nav-email{font-size:12px;color:rgba(255,255,255,.35)}
+.nav-cart-btn{position:relative;width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);color:var(--w);display:flex;align-items:center;justify-content:center;transition:all .18s;cursor:pointer}
+.nav-cart-btn:hover{background:var(--o)}
+.c-badge{position:absolute;top:-7px;right:-7px;background:var(--o);color:var(--w);font-size:11px;font-weight:700;width:19px;height:19px;border-radius:50%;display:none;align-items:center;justify-content:center}
+/* ══ PAGE HERO ═══════════════════════════════════════════ */
+.pg-hero{background:var(--n);padding:64px 0 56px;position:relative;overflow:hidden}
+.pg-hero::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(232,82,26,.06);top:-200px;right:-150px;pointer-events:none}
+.pg-hero::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.02);bottom:-100px;left:-80px;pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(232,82,26,.14);border:1px solid rgba(232,82,26,.28);color:var(--o);font-size:12px;font-weight:600;padding:5px 13px;border-radius:100px;margin-bottom:18px}
+.hero-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--o)}
+.pg-hero h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4.5vw,52px);font-weight:800;color:var(--w);letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
+.pg-hero p{color:rgba(255,255,255,.52);font-size:16px;line-height:1.75;max-width:500px;margin-bottom:30px}
+.hero-2col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-stats{display:flex;gap:32px;margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08)}
+.hs-n{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--w)}
+.hs-l{font-size:12px;color:rgba(255,255,255,.36);margin-top:2px}
+.hero-visual{display:flex;flex-direction:column;gap:14px}
+.hv-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:14px;transition:all .2s;cursor:pointer}
+.hv-card:hover{background:rgba(255,255,255,.09);transform:translateX(4px)}
+.hv-mark{width:44px;height:44px;border-radius:10px;background:rgba(232,82,26,.15);color:var(--o);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:10px;font-weight:800;letter-spacing:.5px;flex-shrink:0}
+.hv-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--w)}
+.hv-sub{font-size:12px;color:rgba(255,255,255,.42);margin-top:2px}
+.hv-arr{margin-left:auto;color:rgba(255,255,255,.2);font-size:18px}
+/* ══ FEATURE BAR ════════════════════════════════════════ */
+.fbar{background:var(--w);border-bottom:1px solid var(--bd)}
+.fbar-g{display:grid;grid-template-columns:repeat(4,1fr)}
+.f-item{display:flex;align-items:center;gap:13px;padding:20px 22px;border-right:1px solid var(--bd)}
+.f-item:last-child{border-right:none}
+.f-ico{width:40px;height:40px;border-radius:9px;background:rgba(13,27,62,.06);color:var(--n);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.f-lbl{font-size:13px;font-weight:600;color:var(--n)}.f-sub{font-size:11.5px;color:var(--mu);margin-top:2px}
+/* ══ BRAND CARDS ════════════════════════════════════════ */
+.brand-card{background:var(--w);border:1.5px solid var(--bd);border-radius:16px;padding:36px;cursor:pointer;transition:all .24s;position:relative;overflow:hidden}
+.brand-card:hover{transform:translateY(-5px);box-shadow:var(--sh2);border-color:var(--o)}
+.bc-name{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;letter-spacing:1px;color:var(--n);margin-bottom:6px}
+.bc-sub{font-size:13.5px;color:var(--mu);margin-bottom:20px}
+.bc-stats{display:flex;gap:24px;margin-bottom:24px}
+.bs-n{font-family:'Syne',sans-serif;font-size:21px;font-weight:800;color:var(--o)}
+.bs-l{font-size:11.5px;color:var(--lm);margin-top:2px}
+.bc-bg{position:absolute;right:20px;bottom:20px;opacity:.05;pointer-events:none}
+/* ══ FILTER TABS ════════════════════════════════════════ */
+.filters{display:flex;gap:5px;background:var(--w);border:1.5px solid var(--bd);padding:5px;border-radius:10px;width:fit-content;flex-wrap:wrap;margin-bottom:28px}
+.f-btn{padding:8px 18px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--mu);transition:all .16s}
+.f-btn:hover:not(.on){color:var(--n)}
+.f-btn.on{background:var(--n);color:var(--w)}
+/* ══ PRODUCT CARDS ══════════════════════════════════════ */
+.prod-card{background:var(--w);border-radius:14px;border:1.5px solid var(--bd);overflow:hidden;display:flex;flex-direction:column;transition:all .24s}
+.prod-card:hover{transform:translateY(-4px);box-shadow:var(--sh2);border-color:var(--o)}
+.pc-img{height:176px;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:20px;position:relative;border-bottom:1.5px solid var(--bd)}
+.pc-badge{position:absolute;top:11px;left:11px;background:var(--n);color:var(--w);font-size:10.5px;font-weight:800;letter-spacing:.7px;padding:3px 10px;border-radius:100px;font-family:'Syne',sans-serif}
+.pc-info{padding:16px;display:flex;flex-direction:column;flex:1}
+.pc-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;line-height:1.35;margin-bottom:5px;color:var(--n)}
+.pc-desc{font-size:12px;color:var(--mu);line-height:1.55;margin-bottom:10px}
+.pc-chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.chip{font-size:11px;font-weight:600;padding:3px 8px;border-radius:100px;border:1px solid var(--bd);background:var(--bg);color:var(--n)}
+.chip-o{background:rgba(232,82,26,.08);border-color:rgba(232,82,26,.22);color:var(--o)}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;gap:8px}
+.pc-price{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--n)}
+.pc-mrp{font-size:12px;color:var(--lm);text-decoration:line-through}
+.pc-acts{display:flex;gap:6px}
+.btn-det{padding:7px 12px;border-radius:7px;font-size:12px;font-weight:600;border:1.5px solid var(--bd);background:transparent;color:var(--mu);transition:all .16s;cursor:pointer}
+.btn-det:hover{border-color:var(--n);color:var(--n)}
+.btn-atc{width:36px;height:36px;border-radius:7px;background:var(--o);color:var(--w);border:none;display:flex;align-items:center;justify-content:center;transition:all .16s;cursor:pointer}
+.btn-atc:hover{background:var(--o2);transform:scale(1.08)}
+/* ══ PRODUCT DETAIL ═════════════════════════════════════ */
+.pd-layout{display:grid;grid-template-columns:480px 1fr;gap:56px;align-items:start}
+.pd-img-box{background:var(--bg);border:1.5px solid var(--bd);border-radius:16px;padding:48px;display:flex;align-items:center;justify-content:center;min-height:360px;position:sticky;top:80px}
+.pd-badge{display:inline-block;background:var(--n);color:var(--w);font-size:11px;font-weight:800;letter-spacing:.8px;padding:4px 12px;border-radius:100px;font-family:'Syne',sans-serif;margin-bottom:14px}
+.pd-name{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;letter-spacing:-.5px;line-height:1.2;margin-bottom:14px}
+.pd-desc{font-size:15px;color:var(--mu);line-height:1.75;margin-bottom:24px;padding-bottom:24px;border-bottom:1.5px solid var(--bd)}
+.spec-g{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px}
+.spec-box{background:var(--bg);border:1.5px solid var(--bd);border-radius:10px;padding:14px;text-align:center}
+.spec-val{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:var(--o)}
+.spec-lbl{font-size:11px;color:var(--mu);margin-top:3px}
+.feat-list{margin-bottom:26px}
+.feat-row{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--n);padding:9px 0;border-bottom:1px solid var(--bg)}
+.feat-row:last-child{border:none}
+.feat-dot{width:22px;height:22px;border-radius:50%;background:var(--o);color:var(--w);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pd-price-wrap{background:var(--bg);border:1.5px solid var(--bd);border-radius:12px;padding:20px;margin-bottom:16px}
+.pd-price{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:var(--n)}
+.pd-mrp{font-size:14px;color:var(--lm);text-decoration:line-through;margin-top:2px}
+.pd-save{font-size:13px;color:var(--o);font-weight:600;margin-top:4px}
+.pd-btns{display:flex;gap:12px}
+/* ══ ABOUT PAGE ══════════════════════════════════════════ */
+.abt-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.abt-body{font-size:15px;color:var(--mu);line-height:1.8;margin-bottom:18px}
+.mv-g{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.mv-card{background:var(--bg);border:1.5px solid var(--bd);border-radius:12px;padding:20px}
+.mv-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--o);margin-bottom:8px}
+.mv-txt{font-size:13.5px;color:var(--mu);line-height:1.65}
+.why-g{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.why-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500}
+.wd{width:24px;height:24px;border-radius:50%;background:var(--o);color:var(--w);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+/* ══ CONTACT PAGE ════════════════════════════════════════ */
+.ct-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.ct-info{display:flex;flex-direction:column;gap:16px;margin-bottom:32px}
+.ci-row{display:flex;align-items:center;gap:14px;font-size:14.5px}
+.ci-ico{width:44px;height:44px;border-radius:10px;background:var(--bg);border:1.5px solid var(--bd);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--n)}
+.cf-box{background:var(--w);border:1.5px solid var(--bd);border-radius:16px;padding:28px}
+.cf-tit{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px}
+.fg{margin-bottom:14px}
+.fl{display:block;font-size:12.5px;font-weight:600;color:var(--mu);margin-bottom:6px}
+.finp{width:100%;padding:11px 14px;border:1.5px solid var(--bd);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .18s;background:var(--bg);color:var(--n)}
+.finp:focus{border-color:var(--o);background:var(--w)}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+/* ══ CART PAGE ═══════════════════════════════════════════ */
+.cart-layout{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start}
+.cart-box{background:var(--w);border:1.5px solid var(--bd);border-radius:14px;overflow:hidden}
+.cart-item{display:flex;gap:16px;padding:20px;border-bottom:1px solid var(--bd);align-items:center}
+.cart-item:last-child{border-bottom:none}
+.ci-thumb{width:76px;height:76px;background:var(--bg);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1.5px solid var(--bd)}
+.ci-brand{font-size:11px;font-weight:800;letter-spacing:.6px;color:var(--o);margin-bottom:3px}
+.ci-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:3px}
+.ci-price{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--o)}
+.qty-ctrl{display:flex;align-items:center;gap:8px;margin-top:8px}
+.qty-b{width:27px;height:27px;border:1.5px solid var(--bd);border-radius:6px;background:var(--w);font-size:15px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s}
+.qty-b:hover{border-color:var(--o);color:var(--o)}
+.qty-v{font-weight:700;font-size:14px;min-width:20px;text-align:center}
+.rm-b{margin-left:auto;background:none;border:none;color:var(--lm);padding:4px;cursor:pointer;transition:color .16s}
+.rm-b:hover{color:#EF4444}
+.order-box{background:var(--w);border:1.5px solid var(--bd);border-radius:14px;padding:24px;position:sticky;top:80px}
+.order-tit{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;padding-bottom:14px;border-bottom:1.5px solid var(--bd);margin-bottom:18px}
+.o-row{display:flex;justify-content:space-between;font-size:13.5px;color:var(--mu);margin-bottom:8px}
+.o-total{display:flex;justify-content:space-between;font-family:'Syne',sans-serif;font-size:19px;font-weight:800;padding-top:14px;border-top:1.5px solid var(--bd);margin:12px 0 20px}
+.co-form{border-top:1.5px solid var(--bd);padding-top:20px}
+.co-tit{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:14px}
+.rzp-btn{width:100%;background:#528FF0;color:var(--w);border:none;padding:14px;border-radius:10px;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .18s;font-family:'Syne',sans-serif;margin-top:14px;cursor:pointer}
+.rzp-btn:hover{background:#3d7de8;transform:translateY(-1px);box-shadow:0 8px 20px rgba(82,143,240,.35)}
+.secure{text-align:center;font-size:12px;color:var(--lm);margin-top:10px}
+/* ══ FOOTER ══════════════════════════════════════════════ */
+.footer{background:var(--n);padding:56px 0 0}
+.footer-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px}
+.footer-desc{font-size:13.5px;color:rgba(255,255,255,.42);line-height:1.72;margin:13px 0 20px;max-width:230px}
+.fc a{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.5);font-size:13.5px;text-decoration:none;margin-bottom:9px;transition:color .17s}
+.fc a:hover{color:var(--o)}
+.fh{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:16px}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:9px}
+.flinks a{color:rgba(255,255,255,.45);font-size:13.5px;text-decoration:none;transition:color .17s}
+.flinks a:hover{color:var(--o)}
+.footer-bot{max-width:1200px;margin:44px auto 0;border-top:1px solid rgba(255,255,255,.08);padding:20px 28px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.3);flex-wrap:wrap;gap:10px}
+/* ══ TOAST ═══════════════════════════════════════════════ */
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--n);color:var(--w);padding:13px 22px;border-radius:10px;font-size:14px;font-weight:500;z-index:9999;transition:transform .3s;display:flex;align-items:center;gap:9px;box-shadow:0 8px 28px rgba(0,0,0,.22);border-left:4px solid var(--o);pointer-events:none;white-space:nowrap;max-width:90vw}
+.toast.show{transform:translateX(-50%) translateY(0)}
+/* ══ MODALS ══════════════════════════════════════════════ */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .26s}
+.ov.show{opacity:1;pointer-events:all}
+.modal{background:var(--w);border-radius:16px;max-width:460px;width:100%;max-height:90vh;overflow-y:auto;transform:scale(.96);transition:transform .26s}
+.ov.show .modal{transform:scale(1)}
+.m-h{padding:20px 24px;border-bottom:1.5px solid var(--bd);display:flex;align-items:center;justify-content:space-between}
+.m-tit{font-family:'Syne',sans-serif;font-size:20px;font-weight:800}
+.x-btn{width:32px;height:32px;border-radius:7px;border:1.5px solid var(--bd);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .16s;color:var(--mu)}
+.x-btn:hover{background:var(--bg);color:var(--n)}
+/* ══ SUCCESS ══════════════════════════════════════════════ */
+.succ-wrap{text-align:center;padding:40px 24px}
+.succ-ico{width:72px;height:72px;background:var(--o);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+/* ══ EMPTY STATE ═════════════════════════════════════════ */
+.empty{text-align:center;padding:80px 20px;color:var(--mu)}
+.empty svg{color:var(--bd);margin-bottom:16px}
+/* ══ BACK BTN ════════════════════════════════════════════ */
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--mu);cursor:pointer;margin-bottom:28px;transition:color .16s;background:none;border:none;padding:0}
+.back-btn:hover{color:var(--n)}
+/* ══ INFO BOX ════════════════════════════════════════════ */
+.info-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;margin-top:20px}
+.info-box p{font-size:13.5px;color:rgba(255,255,255,.58);line-height:1.72;margin-bottom:10px}
+.info-box p:last-child{margin:0}
+/* ══ HOME FEATURED ═══════════════════════════════════════ */
+.feat-strip{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px}
+.feat-strip-card{border-radius:14px;padding:28px;border:2px solid transparent;cursor:pointer;transition:all .22s}
+.feat-strip-card.ap{background:rgba(13,27,62,.04);border-color:var(--bd)}
+.feat-strip-card.ap:hover{border-color:var(--o);transform:translateY(-3px);box-shadow:var(--sh)}
+.fsc-name{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;letter-spacing:.8px;color:var(--n);margin-bottom:5px}
+.fsc-sub{font-size:13.5px;color:var(--mu);margin-bottom:18px}
+/* ══ RESPONSIVE ══════════════════════════════════════════ */
+@media(max-width:1100px){.g4{grid-template-columns:repeat(3,1fr)}.pd-layout{grid-template-columns:1fr}}
+@media(max-width:900px){
+  .abt-layout,.ct-layout,.hero-2col{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .cart-layout{grid-template-columns:1fr}
+  .order-box{position:static}
+  .pd-img-box{position:static}
+  .footer-g{grid-template-columns:1fr 1fr;gap:28px}
 }
 @media(max-width:768px){
-  nav{display:none}
-  .hero{padding:90px 16px 40px;gap:32px}
-  .hero-h1{font-size:1.8rem}
-  .process-grid{grid-template-columns:1fr}
-  .pricing-grid{grid-template-columns:1fr}
-  .section-title{font-size:1.5rem}
-  .footer-grid{grid-template-columns:1fr}
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .fbar-g{grid-template-columns:repeat(2,1fr)}
+  .f-item:nth-child(2){border-right:none}
+  .g2,.g3,.mv-g,.why-g{grid-template-columns:1fr}
+  .nav-links,.nav-email{display:none}
 }
+@media(max-width:480px){.g4{grid-template-columns:1fr}.footer-g{grid-template-columns:1fr}.frow2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- ── HEADER ── -->
-<header>
-  <div class="nav-wrap">
-    <a href="#" class="logo">
-      <div class="logo-icon">A</div>
-      <div>
-        <span>ASSESSMENT</span>
-        <small>Powered By The Student Helpline</small>
-      </div>
+<!-- ═══ NAVBAR (static) ═══ -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#home" class="nav-logo" onclick="go('home')">
+      <svg class="nav-logo-svg" viewBox="0 0 80 80">
+        <circle cx="40" cy="40" r="40" fill="#0D1B3E"/>
+        <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.5"/>
+        <text x="40" y="37" text-anchor="middle" fill="white" font-family="Arial Black,Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="2">SIPL</text>
+        <text x="40" y="52" text-anchor="middle" fill="rgba(255,255,255,.6)" font-family="Arial,sans-serif" font-size="5.2" letter-spacing=".5">SIKHU INNOVATIONS PVT LTD</text>
+      </svg>
+      <div class="nav-logo-txt">Sikhu Innovations<small>Pvt. Ltd.</small></div>
     </a>
-    <nav>
-      <a class="nav-link active" href="#">Home</a>
-      <div class="dropdown">
-        <span class="nav-link">Services
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
-        </span>
-        <div class="dropdown-menu">
-          <div class="dropdown-item">Assessment Help</div>
-          <div class="dropdown-item">Assignment Help</div>
-          <div class="dropdown-item">Coursework Help</div>
-          <div class="dropdown-item">Essay Writing Help</div>
-          <div class="dropdown-item">Dissertation Help</div>
-          <div class="dropdown-item">Case Study Help</div>
-          <div class="dropdown-item">Online Exam Help</div>
-        </div>
-      </div>
-      <div class="dropdown">
-        <span class="nav-link">Subjects
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
-        </span>
-        <div class="dropdown-menu">
-          <div class="dropdown-item">Management</div>
-          <div class="dropdown-item">Law</div>
-          <div class="dropdown-item">Nursing</div>
-          <div class="dropdown-item">Engineering</div>
-          <div class="dropdown-item">Accounting</div>
-          <div class="dropdown-item">IT & Computer Science</div>
-          <div class="dropdown-item">Finance & Economics</div>
-        </div>
-      </div>
-      <a class="nav-link" href="#about">About Us</a>
-      <a class="nav-link" href="#process">How It Works</a>
-      <a class="nav-link" href="#contact">Contact</a>
-    </nav>
-    <div class="nav-right">
-      <a href="https://wa.me/your-number" class="btn-wa" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp
-      </a>
-      <button class="btn-quote" onclick="document.querySelector('.quote-card').scrollIntoView({behavior:'smooth'})">Get Free Quote</button>
-    </div>
-  </div>
-</header>
-
-<!-- ── HERO ── -->
-<section style="padding:110px 24px 60px;background:#fff">
-  <div class="hero" style="padding:0;max-width:1200px">
-    <div class="hero-left reveal-left">
-      <h1 class="hero-h1"><span>Expert Assessment Help</span> for Students Worldwide: Top Assessment Helper Online</h1>
-      <p class="hero-sub">Professional assessment writing assistance from 1500+ PhD-qualified experts. 100% original, AI-free content delivered on time.</p>
-      <div class="ratings">
-        <div class="rating-item">
-          <span class="stars">★★★★★</span>
-          <span class="rating-text">4.9/5</span>
-          <span class="rating-src">Sitejabber</span>
-        </div>
-        <div class="rating-item">
-          <span class="stars">★★★★☆</span>
-          <span class="rating-text">4.7/5</span>
-          <span class="rating-src">Reviews.io</span>
-        </div>
-      </div>
-      <div class="trust-badges">
-        <div class="badge"><span class="badge-icon">🛡️</span> 100% AI-Free</div>
-        <div class="badge"><span class="badge-icon">⏰</span> On-Time</div>
-        <div class="badge"><span class="badge-icon">👥</span> 1500+ Experts</div>
-      </div>
-    </div>
-    <div class="quote-card reveal-right">
-      <div class="quote-card-head">
-        Get Free Quote Instantly
-        <div class="quote-card-sub">Enter your details and get a free quote instantly</div>
-      </div>
-      <div class="form-group">
-        <label>Your Name</label>
-        <input type="text" placeholder="Your Name">
-      </div>
-      <div class="form-group">
-        <label>Phone Number</label>
-        <div class="form-row">
-          <select>
-            <option>IN +91</option>
-            <option>UK +44</option>
-            <option>AU +61</option>
-            <option>US +1</option>
-            <option>AE +971</option>
-          </select>
-          <input type="tel" placeholder="Phone Number">
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" placeholder="your@email.com">
-      </div>
-      <div class="form-group">
-        <label>Type of Service</label>
-        <select>
-          <option>Assessment Help</option>
-          <option>Assignment Help</option>
-          <option>Coursework Help</option>
-          <option>Dissertation Help</option>
-          <option>Essay Writing</option>
-        </select>
-      </div>
-      <button class="btn-submit" onclick="handleSubmit(this)">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
-        Get Free Quote →
+    <ul class="nav-links">
+      <li><a href="#home" onclick="go('home')" data-p="home">Home</a></li>
+      <li><a href="#products" onclick="go('products')" data-p="products">Products</a></li>
+      <li><a href="#apexo" onclick="go('apexo')" data-p="apexo" class="brand-link">APEXO</a></li>
+      <li><a href="#vivotek" onclick="go('vivotek')" data-p="vivotek" class="brand-link">VIVOTEK</a></li>
+      <li><a href="#about" onclick="go('about')" data-p="about">About Us</a></li>
+      <li><a href="#contact" onclick="go('contact')" data-p="contact">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <span class="nav-email">✉ sikhu.limited@gmail.com</span>
+      <button class="nav-cart-btn" onclick="go('cart')" title="Cart">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="c-badge" id="c-badge">0</span>
       </button>
-      <div class="form-trust">
-        <span>Free consultation</span>
-        <span>No obligation</span>
-        <span>Instant response</span>
-      </div>
-      <div class="card-stats">
-        <div><div class="cstat-num"><span class="counter" data-target="180">0</span>K+</div><div class="cstat-label">Papers Done</div></div>
-        <div><div class="cstat-num"><span class="counter" data-target="99">0</span>%</div><div class="cstat-label">Satisfaction</div></div>
-        <div><div class="cstat-num">24/7</div><div class="cstat-label">Support</div></div>
-      </div>
     </div>
   </div>
-</section>
+</nav>
 
-<!-- ── TICKER ── -->
-<div class="ticker-wrap">
-  <div class="ticker">
-    <span class="ticker-item">🎉 20% OFF for New Customers</span>
-    <span class="ticker-item">📚 1500+ Expert Writers Available</span>
-    <span class="ticker-item">⚡ 3-Hour Urgent Delivery</span>
-    <span class="ticker-item">✅ 100% Plagiarism-Free Guarantee</span>
-    <span class="ticker-item">🔒 100% Confidential</span>
-    <span class="ticker-item">💳 Pay After Delivery Option</span>
-    <!-- duplicate for seamless loop -->
-    <span class="ticker-item">🎉 20% OFF for New Customers</span>
-    <span class="ticker-item">📚 1500+ Expert Writers Available</span>
-    <span class="ticker-item">⚡ 3-Hour Urgent Delivery</span>
-    <span class="ticker-item">✅ 100% Plagiarism-Free Guarantee</span>
-    <span class="ticker-item">🔒 100% Confidential</span>
-    <span class="ticker-item">💳 Pay After Delivery Option</span>
-  </div>
-</div>
+<!-- ═══ APP (dynamic) ═══ -->
+<main id="app"></main>
 
-<!-- ── FEATURE: NO AI ── -->
-<section>
-  <div class="container">
-    <div class="feature-split">
-      <div class="feature-visual reveal-left">
-        <div class="feature-circle-outer">
-          <div class="feature-circle-inner">🛡️</div>
+<!-- ═══ FOOTER (static) ═══ -->
+<footer class="footer">
+  <div class="con">
+    <div class="footer-g">
+      <div>
+        <a href="#home" onclick="go('home')" class="nav-logo" style="display:inline-flex">
+          <svg style="width:40px;height:40px;flex-shrink:0" viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="40" fill="#0D1B3E"/>
+            <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.5"/>
+            <text x="40" y="37" text-anchor="middle" fill="white" font-family="Arial Black,Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="2">SIPL</text>
+            <text x="40" y="52" text-anchor="middle" fill="rgba(255,255,255,.6)" font-family="Arial,sans-serif" font-size="5.2" letter-spacing=".5">SIKHU INNOVATIONS PVT LTD</text>
+          </svg>
+          <div class="nav-logo-txt" style="color:#fff">Sikhu Innovations<small>Pvt. Ltd.</small></div>
+        </a>
+        <p class="footer-desc">India's trusted manufacturer of submersible pumps through APEXO and VIVOTEK brands. Quality and performance you can rely on.</p>
+        <div class="fc">
+          <a href="mailto:sikhu.limited@gmail.com">✉ sikhu.limited@gmail.com</a>
         </div>
-        <div class="feature-badge-float">100% Human Written</div>
       </div>
-      <div class="reveal-right">
-        <h2 class="feature-h2">Our Experts Don't Use <span>AI Tools</span></h2>
-        <p class="feature-p">Unlike other services, we guarantee 100% human-written content. Every assessment is crafted by qualified experts with real academic experience.</p>
-        <ul class="feature-list">
-          <li>We follow your exact instructions</li>
-          <li>We accept pay after delivery option</li>
-          <li>We meet even the tightest deadlines</li>
-          <li>We ensure 100% confidentiality</li>
-          <li>We are plagiarism & AI-free</li>
-          <li>We provide 24/7 support</li>
+      <div>
+        <div class="fh" style="color:#E8521A">APEXO</div>
+        <ul class="flinks">
+          <li><a href="#apexo" onclick="go('apexo')">1 HP Pumps</a></li>
+          <li><a href="#apexo" onclick="go('apexo')">1.5 HP Pumps</a></li>
+          <li><a href="#apexo" onclick="go('apexo')">2 HP Pumps</a></li>
+          <li><a href="#apexo" onclick="go('apexo')">3 Inch Bore</a></li>
+          <li><a href="#apexo" onclick="go('apexo')">4 Inch Bore</a></li>
         </ul>
-        <button class="btn-chat" onclick="document.querySelector('.float-wa').scrollIntoView()">
-          💬 Let's Chat
-        </button>
+      </div>
+      <div>
+        <div class="fh" style="color:#4DA8C4">VIVOTEK</div>
+        <ul class="flinks">
+          <li><a href="#vivotek" onclick="go('vivotek')">1 HP Pumps</a></li>
+          <li><a href="#vivotek" onclick="go('vivotek')">1.5 HP Pumps</a></li>
+          <li><a href="#vivotek" onclick="go('vivotek')">2 HP Pumps</a></li>
+          <li><a href="#vivotek" onclick="go('vivotek')">3 Inch Bore</a></li>
+          <li><a href="#vivotek" onclick="go('vivotek')">4 Inch Bore</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="fh">Company</div>
+        <ul class="flinks">
+          <li><a href="#home" onclick="go('home')">Home</a></li>
+          <li><a href="#products" onclick="go('products')">All Products</a></li>
+          <li><a href="#about" onclick="go('about')">About Us</a></li>
+          <li><a href="#contact" onclick="go('contact')">Contact</a></li>
+          <li><a href="#cart" onclick="go('cart')">My Cart</a></li>
+        </ul>
       </div>
     </div>
   </div>
-</section>
-
-<!-- ── PROCESS ── -->
-<section id="process">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">How It Works</h2>
-      <p class="section-sub">Three simple steps to get your assessment done by experts</p>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:start" class="reveal">
-      <div class="process-card">
-        <div class="process-num">💬</div>
-        <h3>Share Your Assessment Details</h3>
-        <p>Connect with us via WhatsApp, email, or our form. Share deadline, word count, citation style, and any special instructions.</p>
-      </div>
-      <div class="process-connector">›</div>
-      <div class="process-card">
-        <div class="process-num">👨‍💼</div>
-        <h3>Get Free Pre-Assessment Consultation</h3>
-        <p>We'll connect you with a subject expert to discuss scope, approach, and brainstorm key ideas for clarity before writing starts.</p>
-      </div>
-      <div class="process-connector">›</div>
-      <div class="process-card">
-        <div class="process-num">💳</div>
-        <h3>Get a Free Quote and Make Secure Payments</h3>
-        <p>After analyzing your deadline and complexity, we'll share a personalized quote. Negotiate pricing and make a secure payment to start.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── BLUE CTA BAND ── -->
-<div class="cta-band">
-  <div class="container">
-    <h2>Can I Pay Someone To Write My Assessment For Me?</h2>
-    <p>Need help with assessments? Help is on its way! At AssessmentHelp, we have a highly motivated team of expert writers, customer support staff and quality check professionals working day and night to help you.</p>
-    <div class="cta-btns">
-      <button class="btn-white" onclick="window.open('https://wa.me/your-number','_blank')">
-        Get Free Quote →
-      </button>
-      <button class="btn-outline-white" onclick="window.open('https://wa.me/your-number','_blank')">
-        Chat on WhatsApp
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- ── PRICING ── -->
-<section id="pricing">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Transparent Pricing</h2>
-      <p class="section-sub">See exactly what's included in every order</p>
-    </div>
-    <div class="pricing-grid reveal">
-      <div class="pricing-card featured">
-        <h3><span>Included in Price</span></h3>
-        <div class="price-row"><span class="price-label">Title Page & Cover</span><span class="price-val">FREE</span></div>
-        <div class="price-row"><span class="price-label">Table of Contents</span><span class="price-val">FREE</span></div>
-        <div class="price-row"><span class="price-label">Reference / Bibliography</span><span class="price-val">FREE</span></div>
-        <div class="price-row"><span class="price-label">Formatting (APA, Harvard, etc.)</span><span class="price-val">FREE</span></div>
-        <div class="price-row"><span class="price-label">Unlimited Revisions</span><span class="price-val">FREE</span></div>
-        <div class="price-row"><span class="price-label">Plagiarism Report</span><span class="price-val">FREE</span></div>
-        <div class="price-row"><span class="price-label">Topic Consultation</span><span class="price-val">FREE</span></div>
-        <div class="price-row"><span class="price-label">24/7 Support</span><span class="price-val">FREE</span></div>
-      </div>
-      <div class="pricing-card">
-        <h3>Premium Add-ons</h3>
-        <div class="addon-row"><span class="addon-label">VIP Support</span><span class="addon-price">$9.99</span></div>
-        <div class="addon-row"><span class="addon-label">Extended Revision Period</span><span class="addon-price">$4.99</span></div>
-        <div class="addon-row"><span class="addon-label">Top Writer Upgrade</span><span class="addon-price">$14.99</span></div>
-        <div class="addon-row"><span class="addon-label">Copy of Sources</span><span class="addon-price">$9.99</span></div>
-        <div class="pricing-from">
-          <small>Starting from</small>
-          <div><span class="pricing-price">$9.99</span><span class="pricing-per">/page</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="pricing-cta-card reveal">
-      <p>Not sure? Try our service with a 1-page trial</p>
-      <button class="btn-chat" style="margin:0 auto;display:inline-flex">Get Started →</button>
-    </div>
-  </div>
-</section>
-
-<!-- ── BENEFITS ── -->
-<section id="benefits">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Benefits of Our Assessment Help</h2>
-      <p class="section-sub">Everything you need for academic success, all in one place</p>
-    </div>
-    <div class="benefits-grid">
-      <div class="benefit-card reveal" style="transition-delay:0.05s">
-        <div class="benefit-icon">✍️</div>
-        <h3>Expert Writers</h3>
-        <p>Our team of 1500+ PhD-certified writers have expertise across 120+ subjects and years of academic experience.</p>
-      </div>
-      <div class="benefit-card reveal" style="transition-delay:0.1s">
-        <div class="benefit-icon">📄</div>
-        <h3>Original Content</h3>
-        <p>Every assessment is written from scratch, ensuring 100% originality with a plagiarism report included free.</p>
-      </div>
-      <div class="benefit-card reveal" style="transition-delay:0.15s">
-        <div class="benefit-icon">⚡</div>
-        <h3>Fast Turnaround</h3>
-        <p>Need it urgently? We can deliver quality work in as little as 3 hours without compromising on quality.</p>
-      </div>
-      <div class="benefit-card reveal" style="transition-delay:0.2s">
-        <div class="benefit-icon">💰</div>
-        <h3>Money-Back Guarantee</h3>
-        <p>Not satisfied? Get a full refund with our money-back assurance — no questions asked.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FAQ ── -->
-<section id="faq">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-sub">Everything you need to know about our assessment help service</p>
-    </div>
-    <div class="faq-list reveal">
-      <div class="faq-item open">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          How do I place an order for assessment help?
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Simply contact us via WhatsApp, email, or fill out our online form. Share your assessment details, deadline, and requirements. Our team will connect you with a suitable expert and provide a free quote within minutes.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Can you handle urgent assessment orders?
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Yes! We specialize in urgent deliveries. Our experts can complete assessments in as little as 3 hours for smaller tasks. For larger projects, we'll give you a realistic timeline to ensure quality is never compromised.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Is your assessment help confidential?
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Absolutely. We take privacy very seriously. Your personal details, order information, and communication with our team are 100% confidential and never shared with third parties. We use encrypted connections for all data.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          What is your revision policy?
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">We offer unlimited free revisions until you're completely satisfied. Simply share your feedback and our expert will make the necessary changes. Your satisfaction is our top priority and we won't stop until you approve.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Do you provide a plagiarism report?
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Yes, every order comes with a free plagiarism report. All our work is 100% original, written from scratch by our experts. We never use AI tools or recycled content — every assessment is unique and tailored to your requirements.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── CONTACT ── -->
-<div class="cta-band" id="contact">
-  <div class="container" style="max-width:700px">
-    <h2>Ready to Get Started?</h2>
-    <p>Send us a WhatsApp message and get a free quote in under 5 minutes. No obligation, no upfront payment.</p>
-    <div class="cta-btns">
-      <button class="btn-white" onclick="window.open('https://wa.me/your-number','_blank')">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#1D6FDB"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Message on WhatsApp
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="logo-icon">A</div>
-        <div>ASSESSMENT<br><small style="font-size:0.55rem;opacity:0.5;font-weight:400">Powered by The Student Helpline</small></div>
-      </div>
-      <p class="footer-tagline">Your trusted partner for professional academic assessment help. We help students achieve academic excellence worldwide.</p>
-      <div class="social-icons">
-        <div class="social-icon">f</div>
-        <div class="social-icon">𝕏</div>
-        <div class="social-icon">in</div>
-        <div class="social-icon">ig</div>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Our Services</h4>
-      <ul>
-        <li><a href="#">Assessment Help</a></li>
-        <li><a href="#">Assignment Help</a></li>
-        <li><a href="#">Coursework Help</a></li>
-        <li><a href="#">Essay Writing Help</a></li>
-        <li><a href="#">Dissertation Help</a></li>
-        <li><a href="#">Case Study Help</a></li>
-        <li><a href="#">Online Exam Help</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Subjects</h4>
-      <ul>
-        <li><a href="#">Management</a></li>
-        <li><a href="#">Law</a></li>
-        <li><a href="#">Nursing</a></li>
-        <li><a href="#">Engineering</a></li>
-        <li><a href="#">Accounting</a></li>
-        <li><a href="#">IT & Computer Science</a></li>
-        <li><a href="#">Finance & Economics</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#process">How It Works</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
-        <li><a href="#">Refund Policy</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact Us</h4>
-      <div class="footer-contact-item">
-        <span class="fc-icon">✉</span>
-        <span>help@assessmenthelp.io</span>
-      </div>
-      <div class="footer-contact-item">
-        <span class="fc-icon">📞</span>
-        <span>+91 98765 43210<br>+44 791 802 3966</span>
-      </div>
-      <div class="footer-contact-item">
-        <span class="fc-icon">🕐</span>
-        <span>24/7 Support Available</span>
-      </div>
-      <button class="footer-wa-btn" onclick="window.open('https://wa.me/your-number','_blank')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Chat on WhatsApp
-      </button>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 AssessmentHelp.io. All rights reserved.</p>
-    <div class="footer-trust">
-      <div class="footer-trust-item" style="font-size:0.75rem;color:rgba(255,255,255,0.35)">100% Secure Payment</div>
-      <div class="footer-trust-item" style="font-size:0.75rem;color:rgba(255,255,255,0.35)">All Major Cards Accepted</div>
-      <div class="footer-trust-item" style="font-size:0.75rem;color:rgba(255,255,255,0.35)">SSL Encrypted</div>
-    </div>
-    <p>Disclaimer: Services provided are for reference and research purposes only.</p>
+  <div class="footer-bot">
+    <span>© 2025 Sikhu Innovations Pvt. Ltd. APEXO &amp; VIVOTEK are registered brands.</span>
+    <span>Secure Payments by Razorpay</span>
   </div>
 </footer>
 
-<!-- ── FLOATING WHATSAPP ── -->
-<div class="float-wa">
-  <button class="float-wa-btn" onclick="window.open('https://wa.me/your-number','_blank')">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </button>
-  <div class="float-wa-label" id="waLabel">
-    <span>Chat with Us</span>
-    <span class="x-btn" onclick="closeWaLabel(event)">✕</span>
-  </div>
-</div>
+<!-- ═══ TOAST ═══ -->
+<div class="toast" id="toast"><span id="toast-msg"></span></div>
 
 <script>
-// ── SCROLL REVEAL ──
-const revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
-},{threshold:0.12});
-revealEls.forEach(el=>io.observe(el));
+/* ══════════════════════════════════════════════════
+   CONFIG — update before going live
+══════════════════════════════════════════════════ */
+const CFG = {
+  rzpKey  : 'YOUR_RAZORPAY_KEY_ID', // 🔑 dashboard.razorpay.com → Settings → API Keys
+  shop    : 'Sikhu Innovations Pvt. Ltd.',
+  email   : 'sikhu.limited@gmail.com',
+  theme   : '#0D1B3E',
+};
 
-// ── COUNTER ANIMATION ──
-function animateCounter(el){
-  const target = parseInt(el.dataset.target);
-  let current = 0;
-  const step = Math.ceil(target/60);
-  const timer = setInterval(()=>{
-    current = Math.min(current+step,target);
-    el.textContent = current;
-    if(current>=target) clearInterval(timer);
-  },20);
+/* ══════════════════════════════════════════════════
+   PRODUCT DATA  ⚠️ Update prices before launch
+══════════════════════════════════════════════════ */
+const PRODS = [
+  {id:1, brand:'apexo', bname:'APEXO', bore:'3inch',
+   name:'Apexo 1 HP 10 Stage Submersible Pump (3 Inch)',
+   sdesc:'Compact and energy-efficient 3-inch submersible pump for domestic water supply and agricultural applications.',
+   desc:'The 1 HP 10 Stage 3-Inch Submersible Pump delivers reliable performance and efficient water lifting from borewells. Built with high-quality components, it ensures durability, low maintenance, and long service life.',
+   feats:['Energy-efficient motor','Reliable water discharge','Corrosion-resistant construction','Low maintenance','Long operational life'],
+   specs:{power:'1 HP',stages:'10',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}, price:3850, orig:4500},
+  {id:2, brand:'apexo', bname:'APEXO', bore:'3inch',
+   name:'Apexo 1.5 HP 15 Stage Submersible Pump (3 Inch)',
+   sdesc:'High-performance submersible pump suitable for deeper borewells and agricultural irrigation.',
+   desc:'The 1.5 HP 15 Stage 3-Inch Submersible Pump is engineered for superior water lifting capacity and consistent performance. Ideal for farms, gardens, and domestic water supply systems.',
+   feats:['Superior water lifting capacity','Consistent performance','Ideal for farms and gardens','Single-phase operation','Corrosion-resistant body'],
+   specs:{power:'1.5 HP',stages:'15',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}, price:5200, orig:6200},
+  {id:3, brand:'apexo', bname:'APEXO', bore:'3inch',
+   name:'Apexo 2 HP 10 Stage Submersible Pump (3 Inch)',
+   sdesc:'Heavy-duty submersible pump designed for high water demand applications.',
+   desc:'The 2 HP 10 Stage 3-Inch Submersible Pump provides powerful performance and dependable operation for agricultural and commercial water supply requirements.',
+   feats:['Powerful 2 HP motor','High water output','Commercial-grade durability','Dependable operation','Low power consumption'],
+   specs:{power:'2 HP',stages:'10',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}, price:6800, orig:8000},
+  {id:4, brand:'apexo', bname:'APEXO', bore:'4inch',
+   name:'Apexo 1 HP 10 Stage Submersible Pump (4 Inch)',
+   sdesc:'Durable 4-inch submersible pump for efficient water extraction from borewells.',
+   desc:'Manufactured with precision engineering, this 1 HP 10 Stage 4-Inch Submersible Pump ensures smooth operation, energy savings, and reliable performance in domestic and agricultural applications.',
+   feats:['Precision engineered','Energy-saving operation','Reliable performance','Domestic & agricultural use','Long service life'],
+   specs:{power:'1 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}, price:4350, orig:5100},
+  {id:5, brand:'apexo', bname:'APEXO', bore:'4inch',
+   name:'Apexo 1.5 HP 15 Stage Submersible Pump (4 Inch)',
+   sdesc:'Powerful and efficient submersible pump for medium to high water lifting requirements.',
+   desc:'The 1.5 HP 15 Stage 4-Inch Submersible Pump is designed to deliver high efficiency and dependable performance in farms, households, and irrigation systems.',
+   feats:['High efficiency design','Dependable performance','Farm & household use','Medium-high lift capacity','Robust construction'],
+   specs:{power:'1.5 HP',stages:'15',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}, price:5950, orig:7000},
+  {id:6, brand:'apexo', bname:'APEXO', bore:'4inch',
+   name:'Apexo 2 HP 10 Stage Submersible Pump (4 Inch)',
+   sdesc:'High-capacity submersible pump built for demanding agricultural and commercial applications.',
+   desc:'The 2 HP 10 Stage 4-Inch Submersible Pump combines robust construction with efficient operation, ensuring reliable water supply and long-lasting performance.',
+   feats:['Heavy-duty construction','Efficient operation','Agricultural & commercial grade','Reliable water supply','Long-lasting performance'],
+   specs:{power:'2 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}, price:7600, orig:9000},
+  {id:7, brand:'vivotek', bname:'VIVOTEK', bore:'3inch',
+   name:'Vivotek 1 HP 10 Stage Submersible Pump (3 Inch)',
+   sdesc:'Compact and energy-efficient 3-inch submersible pump for domestic water supply and agricultural applications.',
+   desc:'The 1 HP 10 Stage 3-Inch Submersible Pump delivers reliable performance and efficient water lifting from borewells. Built with high-quality components, it ensures durability, low maintenance, and long service life.',
+   feats:['Energy-efficient motor','Reliable water discharge','Corrosion-resistant construction','Low maintenance','Long operational life'],
+   specs:{power:'1 HP',stages:'10',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}, price:4150, orig:4900},
+  {id:8, brand:'vivotek', bname:'VIVOTEK', bore:'3inch',
+   name:'Vivotek 1.5 HP 15 Stage Submersible Pump (3 Inch)',
+   sdesc:'High-performance submersible pump suitable for deeper borewells and agricultural irrigation.',
+   desc:'The 1.5 HP 15 Stage 3-Inch Submersible Pump is engineered for superior water lifting capacity and consistent performance. Ideal for farms, gardens, and domestic water supply systems.',
+   feats:['Superior water lifting capacity','Consistent performance','Ideal for farms and gardens','Single-phase operation','Corrosion-resistant body'],
+   specs:{power:'1.5 HP',stages:'15',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}, price:5750, orig:6800},
+  {id:9, brand:'vivotek', bname:'VIVOTEK', bore:'3inch',
+   name:'Vivotek 2 HP 10 Stage Submersible Pump (3 Inch)',
+   sdesc:'Heavy-duty submersible pump designed for high water demand applications.',
+   desc:'The 2 HP 10 Stage 3-Inch Submersible Pump provides powerful performance and dependable operation for agricultural and commercial water supply requirements.',
+   feats:['Powerful 2 HP motor','High water output','Commercial-grade durability','Dependable operation','Low power consumption'],
+   specs:{power:'2 HP',stages:'10',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}, price:7350, orig:8700},
+  {id:10, brand:'vivotek', bname:'VIVOTEK', bore:'4inch',
+   name:'Vivotek 1 HP 10 Stage Submersible Pump (4 Inch)',
+   sdesc:'Durable 4-inch submersible pump for efficient water extraction from borewells.',
+   desc:'Manufactured with precision engineering, this 1 HP 10 Stage 4-Inch Submersible Pump ensures smooth operation, energy savings, and reliable performance in domestic and agricultural applications.',
+   feats:['Precision engineered','Energy-saving operation','Reliable performance','Domestic & agricultural use','Long service life'],
+   specs:{power:'1 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}, price:4850, orig:5700},
+  {id:11, brand:'vivotek', bname:'VIVOTEK', bore:'4inch',
+   name:'Vivotek 1.5 HP 15 Stage Submersible Pump (4 Inch)',
+   sdesc:'Powerful and efficient submersible pump for medium to high water lifting requirements.',
+   desc:'The 1.5 HP 15 Stage 4-Inch Submersible Pump is designed to deliver high efficiency and dependable performance in farms, households, and irrigation systems.',
+   feats:['High efficiency design','Dependable performance','Farm & household use','Medium-high lift capacity','Robust construction'],
+   specs:{power:'1.5 HP',stages:'15',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}, price:6550, orig:7700},
+  {id:12, brand:'vivotek', bname:'VIVOTEK', bore:'4inch',
+   name:'Vivotek 2 HP 10 Stage Submersible Pump (4 Inch)',
+   sdesc:'High-capacity submersible pump built for demanding agricultural and commercial applications.',
+   desc:'The 2 HP 10 Stage 4-Inch Submersible Pump combines robust construction with efficient operation, ensuring reliable water supply and long-lasting performance.',
+   feats:['Heavy-duty construction','Efficient operation','Agricultural & commercial grade','Reliable water supply','Long-lasting performance'],
+   specs:{power:'2 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}, price:8200, orig:9700},
+];
+
+/* ══ CART (localStorage) ══ */
+let cart = [];
+try { cart = JSON.parse(localStorage.getItem('sipl_cart')||'[]'); } catch(e){}
+function saveCart(){ try{localStorage.setItem('sipl_cart',JSON.stringify(cart));}catch(e){} }
+function cartCount(){ return cart.reduce((s,i)=>s+i.qty,0); }
+function cartTotal(){ return cart.reduce((s,i)=>s+i.price*i.qty,0); }
+function addCart(id){
+  const p=PRODS.find(x=>x.id===id);
+  const ex=cart.find(x=>x.id===id);
+  ex?ex.qty++:cart.push({id:p.id,brand:p.brand,bname:p.bname,name:p.name,price:p.price,specs:p.specs,qty:1});
+  saveCart(); refreshBadge();
+  showToast('['+p.bname+'] '+p.specs.power+' · '+p.specs.stages+' Stage · '+p.specs.bore+' added ✓');
 }
-const counterEls = document.querySelectorAll('.counter');
-const cio = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){animateCounter(e.target);cio.unobserve(e.target)}});
-},{threshold:0.5});
-counterEls.forEach(el=>cio.observe(el));
-
-// ── FAQ ACCORDION ──
-function toggleFaq(btn){
-  const item = btn.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
-  if(!isOpen) item.classList.add('open');
+function remCart(id){ cart=cart.filter(x=>x.id!==id); saveCart(); refreshBadge(); if(location.hash==='#cart') pageCart(); }
+function updQty(id,d){ const it=cart.find(x=>x.id===id); if(!it)return; it.qty+=d; if(it.qty<=0)remCart(id); else{saveCart();refreshBadge();if(location.hash==='#cart')pageCart();} }
+function refreshBadge(){
+  const n=cartCount(), b=document.getElementById('c-badge');
+  if(b){b.textContent=n; b.style.display=n>0?'flex':'none';}
 }
 
-// ── WHATSAPP LABEL ──
-function closeWaLabel(e){
-  e.stopPropagation();
-  document.getElementById('waLabel').classList.add('hidden');
+/* ══ HELPERS ══ */
+const fmt = n => '₹'+Number(n).toLocaleString('en-IN');
+function pumpSVG(size=110){
+  return `<svg width="${size}" height="${size}" viewBox="0 0 120 120" fill="none">
+    <ellipse cx="60" cy="108" rx="40" ry="9" fill="#0D1B3E" opacity=".07"/>
+    <rect x="20" y="60" width="80" height="42" rx="10" fill="#0D1B3E"/>
+    <rect x="25" y="65" width="70" height="32" rx="8" fill="#0D1B3E" opacity=".78"/>
+    <rect x="29" y="36" width="62" height="28" rx="8" fill="#0D1B3E" opacity=".88"/>
+    <rect x="29" y="38" width="62" height="5" rx="2" fill="rgba(255,255,255,.1)"/>
+    <rect x="52" y="10" width="16" height="28" rx="6" fill="#0D1B3E" opacity=".7"/>
+    <circle cx="60" cy="9" r="8" fill="#E8521A"/>
+    <circle cx="60" cy="9" r="3.5" fill="rgba(255,255,255,.35)"/>
+    <rect x="99" y="74" width="19" height="12" rx="4" fill="#E8521A"/>
+    <rect x="112" y="63" width="8" height="26" rx="4" fill="#E8521A" opacity=".75"/>
+    <rect x="2" y="80" width="19" height="12" rx="4" fill="#E8521A"/>
+    <rect x="25" y="68" width="3" height="32" rx="2" fill="rgba(255,255,255,.16)"/>
+    <rect x="34" y="68" width="3" height="32" rx="2" fill="rgba(255,255,255,.16)"/>
+    <rect x="43" y="68" width="3" height="32" rx="2" fill="rgba(255,255,255,.16)"/>
+    <rect x="52" y="68" width="3" height="32" rx="2" fill="rgba(255,255,255,.16)"/>
+    <rect x="61" y="68" width="3" height="32" rx="2" fill="rgba(255,255,255,.16)"/>
+    <rect x="70" y="68" width="3" height="32" rx="2" fill="rgba(255,255,255,.16)"/>
+    <rect x="79" y="68" width="3" height="32" rx="2" fill="rgba(255,255,255,.16)"/>
+    <rect x="88" y="68" width="3" height="32" rx="2" fill="rgba(255,255,255,.16)"/>
+    <rect x="20" y="101" width="80" height="8" rx="4" fill="#0D1B3E" opacity=".55"/>
+  </svg>`;
 }
-setTimeout(()=>{
-  const lbl = document.getElementById('waLabel');
-  if(lbl && !lbl.classList.contains('hidden')) lbl.classList.add('hidden');
-},8000);
+function xSVG(){ return `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>`; }
+function checkSVG(){ return `<svg width="13" height="13" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`; }
 
-// ── FORM SUBMIT ──
-function handleSubmit(btn){
-  btn.innerHTML = '✓ Sent! We\'ll contact you shortly';
-  btn.style.background = '#16a34a';
-  setTimeout(()=>{
-    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg> Get Free Quote →';
-    btn.style.background = '';
-  },3000);
+/* ══ PRODUCT CARD ══ */
+function prodCard(p){
+  const disc = Math.round((p.orig-p.price)/p.orig*100);
+  return `<div class="prod-card">
+    <div class="pc-img">
+      <span class="pc-badge">${p.bname}</span>
+      ${pumpSVG(100)}
+    </div>
+    <div class="pc-info">
+      <div class="pc-name">${p.name}</div>
+      <div class="pc-desc">${p.sdesc}</div>
+      <div class="pc-chips">
+        <span class="chip chip-o">${p.specs.power}</span>
+        <span class="chip chip-o">${p.specs.stages} Stage</span>
+        <span class="chip chip-o">${p.specs.bore}</span>
+        <span class="chip">${p.specs.phase}</span>
+        <span class="chip">${p.specs.voltage}</span>
+      </div>
+      <div class="pc-foot">
+        <div>
+          <div class="pc-price">${fmt(p.price)}</div>
+          <div class="pc-mrp">${fmt(p.orig)} <span style="color:#E8521A;font-size:11px;font-weight:700;text-decoration:none">${disc}% off</span></div>
+        </div>
+        <div class="pc-acts">
+          <button class="btn-det" onclick="go('product/${p.id}')">Details</button>
+          <button class="btn-atc" onclick="addCart(${p.id})" title="Add to cart">
+            <svg width="16" height="16" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>`;
 }
 
-// ── STICKY NAV HIGHLIGHT ──
-const sections = document.querySelectorAll('section[id],div[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-window.addEventListener('scroll',()=>{
-  const scrollY = window.scrollY+100;
-  sections.forEach(sec=>{
-    if(scrollY>=sec.offsetTop && scrollY<sec.offsetTop+sec.offsetHeight){
-      navLinks.forEach(l=>l.classList.remove('active'));
-      const match = document.querySelector(`.nav-link[href="#${sec.id}"]`);
-      if(match) match.classList.add('active');
-    }
+/* ══ RENDER GRID ══ */
+function prodGrid(list, filterId){
+  const filterHtml = filterId ? `
+    <div class="filters" id="fbar">
+      <button class="f-btn on" onclick="filterGrid('all','${filterId}',this)">All</button>
+      ${filterId==='brand'?`
+        <button class="f-btn" onclick="filterGrid('apexo','${filterId}',this)">APEXO</button>
+        <button class="f-btn" onclick="filterGrid('vivotek','${filterId}',this)">VIVOTEK</button>
+        <button class="f-btn" onclick="filterGrid('3inch','${filterId}',this)">3 Inch</button>
+        <button class="f-btn" onclick="filterGrid('4inch','${filterId}',this)">4 Inch</button>
+      `:`
+        <button class="f-btn" onclick="filterGrid('3inch','${filterId}',this)">3 Inch</button>
+        <button class="f-btn" onclick="filterGrid('4inch','${filterId}',this)">4 Inch</button>
+      `}
+    </div>` : '';
+  return filterHtml + `<div class="g4" id="${filterId||'pg'}">${list.map(prodCard).join('')}</div>`;
+}
+const _filterSrc = {};
+function filterGrid(cat, id, btn){
+  document.querySelectorAll('#fbar .f-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  const src = _filterSrc[id]||PRODS;
+  const out = cat==='all'?src:src.filter(p=>p.brand===cat||p.bore===cat);
+  const g = document.getElementById(id);
+  if(g) g.innerHTML = out.length ? out.map(prodCard).join('') : `<div class="empty" style="grid-column:1/-1"><p>No products found.</p></div>`;
+}
+
+/* ══ NAVIGATION ══ */
+function go(page){ location.hash = page; window.scrollTo(0,0); }
+function setApp(html){ document.getElementById('app').innerHTML = html; refreshBadge(); }
+function updNav(page){
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.classList.toggle('act', a.dataset.p===page || (page===''&&a.dataset.p==='home'));
   });
-});
+}
+function route(){
+  const h = (location.hash||'#home').slice(1)||'home';
+  window.scrollTo(0,0);
+  if(h.startsWith('product/')) { pageProduct(+h.split('/')[1]); updNav('products'); return; }
+  const pages={home:pageHome,apexo:pageApexo,vivotek:pageVivotek,products:pageProducts,about:pageAbout,contact:pageContact,cart:pageCart};
+  (pages[h]||pageHome)();
+  updNav(h);
+}
+window.addEventListener('hashchange', route);
+document.addEventListener('DOMContentLoaded', ()=>{ refreshBadge(); route(); });
+
+/* ══════════════════════════════════════════════════
+   PAGE: HOME
+══════════════════════════════════════════════════ */
+function pageHome(){
+  const feat = [...PRODS.filter(p=>p.id<=2), ...PRODS.filter(p=>p.id>=7&&p.id<=8)];
+  setApp(`
+  <!-- HERO -->
+  <section class="pg-hero">
+    <div class="con">
+      <div class="hero-2col">
+        <div>
+          <div class="hero-badge">Trusted Indian Manufacturer · ISI Certified</div>
+          <h1>Powering India's<br>Water Supply.</h1>
+          <p>Sikhu Innovations Pvt. Ltd. manufactures premium submersible pumps through two trusted brands — <strong style="color:#E8521A">APEXO</strong> and <strong style="color:#4DA8C4">VIVOTEK</strong> — for agriculture, homes, and industry.</p>
+          <div class="flex gap12">
+            <button class="btn btn-p btn-lg" onclick="go('apexo')">APEXO Pumps →</button>
+            <button class="btn btn-olw btn-lg" onclick="go('vivotek')">VIVOTEK Pumps →</button>
+          </div>
+          <div class="hero-stats">
+            <div><div class="hs-n">12+</div><div class="hs-l">Pump Models</div></div>
+            <div><div class="hs-n">2 Yr</div><div class="hs-l">Warranty</div></div>
+            <div><div class="hs-n">ISI</div><div class="hs-l">Certified</div></div>
+            <div><div class="hs-n">220V</div><div class="hs-l">Single Phase</div></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hv-card" onclick="go('apexo')">
+            <div class="hv-mark">APX</div>
+            <div><div class="hv-name">APEXO</div><div class="hv-sub">Industrial-grade submersible pumps · 6 models</div></div>
+            <div class="hv-arr">›</div>
+          </div>
+          <div class="hv-card" onclick="go('vivotek')">
+            <div class="hv-mark" style="background:rgba(77,168,196,.15);color:#4DA8C4">VTK</div>
+            <div><div class="hv-name">VIVOTEK</div><div class="hv-sub">Premium borewell pump solutions · 6 models</div></div>
+            <div class="hv-arr">›</div>
+          </div>
+          <div style="display:flex;justify-content:center;opacity:.25;margin-top:8px">${pumpSVG(120)}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES BAR -->
+  <div class="fbar">
+    <div class="con"><div class="fbar-g">
+      <div class="f-item">
+        <div class="f-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div><div class="f-lbl">ISI Certified Products</div><div class="f-sub">BIS Standards Approved</div></div>
+      </div>
+      <div class="f-item">
+        <div class="f-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="f-lbl">2-Year Warranty</div><div class="f-sub">On all pump models</div></div>
+      </div>
+      <div class="f-item">
+        <div class="f-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div><div class="f-lbl">Energy-Efficient Motors</div><div class="f-sub">Low power consumption</div></div>
+      </div>
+      <div class="f-item">
+        <div class="f-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div><div class="f-lbl">Pan-India Support</div><div class="f-sub">Dealer & service network</div></div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- OUR BRANDS -->
+  <section class="sec">
+    <div class="con">
+      <div class="section-head">
+        <span class="s-tag">Our Brands</span>
+        <div class="s-tit">Two Brands. One Promise of Quality.</div>
+      </div>
+      <div class="g2">
+        <div class="brand-card" onclick="go('apexo')">
+          <div class="bc-name">APEXO</div>
+          <div class="bc-sub">Industrial-Grade Submersible Pump Solutions</div>
+          <div class="bc-stats">
+            <div><div class="bs-n">6</div><div class="bs-l">Models</div></div>
+            <div><div class="bs-n">3″ &amp; 4″</div><div class="bs-l">Bore Sizes</div></div>
+            <div><div class="bs-n">1–2 HP</div><div class="bs-l">Power Range</div></div>
+          </div>
+          <button class="btn btn-p btn-sm" onclick="event.stopPropagation();go('apexo')">Browse APEXO →</button>
+          <div class="bc-bg">${pumpSVG(160)}</div>
+        </div>
+        <div class="brand-card" onclick="go('vivotek')">
+          <div class="bc-name">VIVOTEK</div>
+          <div class="bc-sub">Premium Borewell Submersible Pump Range</div>
+          <div class="bc-stats">
+            <div><div class="bs-n">6</div><div class="bs-l">Models</div></div>
+            <div><div class="bs-n">3″ &amp; 4″</div><div class="bs-l">Bore Sizes</div></div>
+            <div><div class="bs-n">1–2 HP</div><div class="bs-l">Power Range</div></div>
+          </div>
+          <button class="btn btn-n btn-sm" onclick="event.stopPropagation();go('vivotek')">Browse VIVOTEK →</button>
+          <div class="bc-bg">${pumpSVG(160)}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="sec-sm" style="background:var(--w);border-top:1.5px solid var(--bd);border-bottom:1.5px solid var(--bd)">
+    <div class="con">
+      <div class="flex-b" style="margin-bottom:28px;flex-wrap:wrap;gap:14px">
+        <div>
+          <span class="s-tag">Featured Products</span>
+          <div class="s-tit">Top Picks from Both Brands</div>
+        </div>
+        <button class="btn btn-ol" onclick="go('products')">View All 12 Products →</button>
+      </div>
+      <div class="g4">${feat.map(prodCard).join('')}</div>
+    </div>
+  </section>
+
+  <!-- ABOUT SNIPPET -->
+  <section class="sec-dk">
+    <div class="con">
+      <div style="max-width:680px;margin:0 auto;text-align:center">
+        <span class="s-tag" style="display:block;text-align:center;margin-bottom:9px">About Sikhu Innovations</span>
+        <div class="s-tit-w" style="margin-bottom:18px">Delivering Trust Through Performance</div>
+        <p style="color:rgba(255,255,255,.55);font-size:15.5px;line-height:1.78;margin-bottom:32px">Sikhu Innovations Pvt. Ltd. is a growing Indian manufacturer of high-quality submersible pumps and motors. We are committed to delivering reliable, efficient, and durable water pumping solutions through our trusted brands APEXO and VIVOTEK.</p>
+        <div class="flex gap12" style="justify-content:center;flex-wrap:wrap">
+          <button class="btn btn-p btn-lg" onclick="go('about')">Our Story</button>
+          <button class="btn btn-olw btn-lg" onclick="go('contact')">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  `);
+  _filterSrc['home-feat'] = feat;
+}
+
+/* ══════════════════════════════════════════════════
+   PAGE: APEXO
+══════════════════════════════════════════════════ */
+function pageApexo(){
+  const list = PRODS.filter(p=>p.brand==='apexo');
+  _filterSrc['apexo-grid'] = list;
+  setApp(`
+  <section class="pg-hero">
+    <div class="con">
+      <div class="hero-badge">Sikhu Innovations Brand</div>
+      <h1>APEXO</h1>
+      <p>Industrial-grade submersible pumps built for reliable performance in borewells. Available in 3-inch and 4-inch bore sizes with 1 to 2 HP power options.</p>
+      <div class="flex gap12">
+        <button class="btn btn-p" onclick="go('cart')">View Cart</button>
+        <button class="btn btn-olw" onclick="go('vivotek')">View VIVOTEK →</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hs-n">6</div><div class="hs-l">Models</div></div>
+        <div><div class="hs-n">3″ &amp; 4″</div><div class="hs-l">Bore Sizes</div></div>
+        <div><div class="hs-n">1–2 HP</div><div class="hs-l">Power Range</div></div>
+        <div><div class="hs-n">220V</div><div class="hs-l">Single Phase</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="con">
+      <div class="flex-b" style="margin-bottom:8px;flex-wrap:wrap;gap:14px">
+        <div><span class="s-tag">APEXO Range</span><div class="s-tit">All APEXO Pumps</div></div>
+      </div>
+      ${prodGrid(list,'apexo-grid')}
+    </div>
+  </section>
+  `);
+}
+
+/* ══════════════════════════════════════════════════
+   PAGE: VIVOTEK
+══════════════════════════════════════════════════ */
+function pageVivotek(){
+  const list = PRODS.filter(p=>p.brand==='vivotek');
+  _filterSrc['vivotek-grid'] = list;
+  setApp(`
+  <section class="pg-hero">
+    <div class="con">
+      <div class="hero-badge">Sikhu Innovations Brand</div>
+      <h1>VIVOTEK</h1>
+      <p>Premium submersible pump solutions engineered for superior water lifting capacity. Available in 3-inch and 4-inch bore sizes with 1 to 2 HP power options.</p>
+      <div class="flex gap12">
+        <button class="btn btn-p" onclick="go('cart')">View Cart</button>
+        <button class="btn btn-olw" onclick="go('apexo')">View APEXO →</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hs-n">6</div><div class="hs-l">Models</div></div>
+        <div><div class="hs-n">3″ &amp; 4″</div><div class="hs-l">Bore Sizes</div></div>
+        <div><div class="hs-n">1–2 HP</div><div class="hs-l">Power Range</div></div>
+        <div><div class="hs-n">220V</div><div class="hs-l">Single Phase</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="con">
+      <div class="flex-b" style="margin-bottom:8px;flex-wrap:wrap;gap:14px">
+        <div><span class="s-tag">VIVOTEK Range</span><div class="s-tit">All VIVOTEK Pumps</div></div>
+      </div>
+      ${prodGrid(list,'vivotek-grid')}
+    </div>
+  </section>
+  `);
+}
+
+/* ══════════════════════════════════════════════════
+   PAGE: ALL PRODUCTS
+══════════════════════════════════════════════════ */
+function pageProducts(){
+  _filterSrc['brand'] = PRODS;
+  setApp(`
+  <section class="pg-hero">
+    <div class="con">
+      <div class="hero-badge">Complete Catalogue</div>
+      <h1>All Products</h1>
+      <p>Browse our complete range of 12 submersible pump models across APEXO and VIVOTEK brands. Filter by brand or bore size to find the right pump for your needs.</p>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="con">
+      <div class="flex-b" style="margin-bottom:8px;flex-wrap:wrap;gap:14px">
+        <div><span class="s-tag">12 Products</span><div class="s-tit">APEXO &amp; VIVOTEK Range</div></div>
+      </div>
+      ${prodGrid(PRODS,'brand')}
+    </div>
+  </section>
+  `);
+}
+
+/* ══════════════════════════════════════════════════
+   PAGE: PRODUCT DETAIL
+══════════════════════════════════════════════════ */
+function pageProduct(id){
+  const p = PRODS.find(x=>x.id===id);
+  if(!p){ pageProducts(); return; }
+  const disc = Math.round((p.orig-p.price)/p.orig*100);
+  const related = PRODS.filter(x=>x.brand===p.brand&&x.id!==id).slice(0,4);
+  setApp(`
+  <section class="sec">
+    <div class="con">
+      <button class="back-btn" onclick="history.back()">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Back
+      </button>
+      <div class="pd-layout">
+        <div class="pd-img-box">${pumpSVG(200)}</div>
+        <div>
+          <div class="pd-badge">${p.bname}</div>
+          <div class="pd-name">${p.name}</div>
+          <div class="pd-desc">${p.desc}</div>
+          <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:10px">Specifications</div>
+          <div class="spec-g">
+            <div class="spec-box"><div class="spec-val">${p.specs.power}</div><div class="spec-lbl">Power</div></div>
+            <div class="spec-box"><div class="spec-val">${p.specs.stages}</div><div class="spec-lbl">Stages</div></div>
+            <div class="spec-box"><div class="spec-val">${p.specs.bore}</div><div class="spec-lbl">Bore Size</div></div>
+            <div class="spec-box"><div class="spec-val">${p.specs.phase}</div><div class="spec-lbl">Phase</div></div>
+            <div class="spec-box"><div class="spec-val">${p.specs.voltage}</div><div class="spec-lbl">Voltage</div></div>
+            <div class="spec-box"><div class="spec-val">2 Yr</div><div class="spec-lbl">Warranty</div></div>
+          </div>
+          <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:10px">Key Features</div>
+          <div class="feat-list">${p.feats.map(f=>`<div class="feat-row"><div class="feat-dot">${checkSVG()}</div>${f}</div>`).join('')}</div>
+          <div class="pd-price-wrap">
+            <div class="pd-price">${fmt(p.price)}</div>
+            <div class="pd-mrp">${fmt(p.orig)}</div>
+            <div class="pd-save">You save ${fmt(p.orig-p.price)} (${disc}% off)</div>
+          </div>
+          <div class="pd-btns">
+            <button class="btn btn-p btn-lg btn-full" onclick="addCart(${p.id})">
+              <svg width="18" height="18" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              Add to Cart
+            </button>
+          </div>
+          <button class="btn btn-ol btn-full" style="margin-top:10px" onclick="go('cart')">View Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  ${related.length?`
+  <section class="sec-sm" style="background:var(--w);border-top:1.5px solid var(--bd)">
+    <div class="con">
+      <div style="margin-bottom:24px"><span class="s-tag">More from ${p.bname}</span><div class="s-tit">Related Products</div></div>
+      <div class="g4">${related.map(prodCard).join('')}</div>
+    </div>
+  </section>`:''}
+  `);
+}
+
+/* ══════════════════════════════════════════════════
+   PAGE: ABOUT US
+══════════════════════════════════════════════════ */
+function pageAbout(){
+  setApp(`
+  <section class="pg-hero">
+    <div class="con">
+      <div class="hero-badge">About the Company</div>
+      <h1>Sikhu Innovations<br>Pvt. Ltd.</h1>
+      <p>A growing Indian manufacturer of high-quality submersible pumps and motors, delivering trust through performance since 2010.</p>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="con">
+      <div class="abt-layout">
+        <div>
+          <span class="s-tag">Our Story</span>
+          <div class="s-tit" style="margin-bottom:24px">Delivering Trust Through Performance</div>
+          <p class="abt-body">Sikhu Innovations Pvt. Ltd. is a growing Indian manufacturer of high-quality submersible pumps and motors. Through our trusted brands <strong style="color:#E8521A">Apexo</strong> and <strong style="color:#0D1B3E">Vivotek</strong>, we are committed to delivering reliable, efficient, and durable water pumping solutions for customers across India.</p>
+          <p class="abt-body">We understand the importance of a dependable water supply in everyday life. That is why every product we manufacture is designed with a focus on performance, energy efficiency, and long service life. Using quality materials and modern manufacturing techniques, we ensure that our pumps provide consistent performance even in challenging conditions.</p>
+          <p class="abt-body">At Sikhu Innovations, quality is not just a goal — it is our commitment. From manufacturing to customer support, we strive to maintain the highest standards and build lasting relationships with our customers, dealers, and business partners.</p>
+          <div class="mv-g">
+            <div class="mv-card">
+              <div class="mv-lbl">Our Mission</div>
+              <div class="mv-txt">To provide reliable and energy-efficient pumping solutions that deliver excellent performance, long-lasting durability, and complete customer satisfaction.</div>
+            </div>
+            <div class="mv-card">
+              <div class="mv-lbl">Our Vision</div>
+              <div class="mv-txt">To become a trusted name in the pump industry by continuously improving our products, embracing innovation, and exceeding customer expectations.</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <span class="s-tag">Why Choose Us</span>
+          <div class="s-tit" style="margin-bottom:24px">Built on Trust &amp; Quality</div>
+          <div class="why-g" style="margin-bottom:32px">
+            ${['Quality You Can Trust','Reliable Performance','Energy-Efficient Products','Durable Construction','Customer-Centric Approach','Strong Dealer Support'].map(w=>`
+            <div class="why-item"><div class="wd">${checkSVG()}</div>${w}</div>`).join('')}
+          </div>
+          <div style="background:var(--n);border-radius:14px;padding:28px">
+            <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:16px">Our Two Brands</div>
+            <div style="background:rgba(232,82,26,.1);border:1px solid rgba(232,82,26,.2);border-radius:10px;padding:16px;margin-bottom:12px;cursor:pointer" onclick="go('apexo')">
+              <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#E8521A;margin-bottom:4px">APEXO</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.5)">Industrial submersible pumps · 3″ &amp; 4″ bore · 1–2 HP · ISI Certified</div>
+            </div>
+            <div style="background:rgba(77,168,196,.08);border:1px solid rgba(77,168,196,.2);border-radius:10px;padding:16px;cursor:pointer" onclick="go('vivotek')">
+              <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#4DA8C4;margin-bottom:4px">VIVOTEK</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.5)">Premium borewell pumps · 3″ &amp; 4″ bore · 1–2 HP · ISI Certified</div>
+            </div>
+            <div class="info-box" style="margin-top:16px">
+              <p>Our success is driven by trust, innovation, and a dedication to customer satisfaction. As we continue to grow, our mission remains the same: to provide dependable products that customers can rely on for years to come.</p>
+              <p style="font-family:'Syne',sans-serif;font-weight:700;color:rgba(255,255,255,.75)">— Sikhu Innovations Pvt. Ltd.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sec-dk">
+    <div class="con" style="text-align:center">
+      <div class="s-tit-w" style="margin-bottom:14px">Ready to Order?</div>
+      <p style="color:rgba(255,255,255,.52);font-size:15px;margin-bottom:28px">Browse our full range of APEXO and VIVOTEK submersible pumps.</p>
+      <div class="flex gap12" style="justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-p btn-lg" onclick="go('products')">View All Products</button>
+        <button class="btn btn-olw btn-lg" onclick="go('contact')">Contact Us</button>
+      </div>
+    </div>
+  </section>
+  `);
+}
+
+/* ══════════════════════════════════════════════════
+   PAGE: CONTACT
+══════════════════════════════════════════════════ */
+function pageContact(){
+  setApp(`
+  <section class="pg-hero">
+    <div class="con">
+      <div class="hero-badge">Get in Touch</div>
+      <h1>Contact Us</h1>
+      <p>Looking for bulk orders, dealer partnerships, or product support? Our team is ready to help. We'll get back to you promptly.</p>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="con">
+      <div class="ct-layout">
+        <div>
+          <span class="s-tag">Contact Information</span>
+          <div class="s-tit" style="margin-bottom:24px">We'd Love to Hear From You</div>
+          <div class="ct-info">
+            <div class="ci-row">
+              <div class="ci-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><div style="font-weight:600">sikhu.limited@gmail.com</div><div style="font-size:12px;color:var(--mu)">Business &amp; dealer enquiries</div></div>
+            </div>
+            <div class="ci-row">
+              <div class="ci-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+              <div><div style="font-weight:600">Monday – Saturday, 9 AM – 6 PM</div><div style="font-size:12px;color:var(--mu)">Indian Standard Time</div></div>
+            </div>
+            <div class="ci-row">
+              <div class="ci-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><div style="font-weight:600">Pan-India Distribution Network</div><div style="font-size:12px;color:var(--mu)">Dealer network across all states</div></div>
+            </div>
+          </div>
+          <div style="background:var(--bg);border:1.5px solid var(--bd);border-radius:14px;padding:24px;margin-top:8px">
+            <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:16px">Our Brands</div>
+            <div onclick="go('apexo')" style="display:flex;align-items:center;gap:12px;padding:12px;border:1.5px solid var(--bd);border-radius:10px;cursor:pointer;background:#fff;margin-bottom:10px;transition:all .18s" onmouseover="this.style.borderColor='#E8521A'" onmouseout="this.style.borderColor='var(--bd)'">
+              <div style="width:40px;height:40px;background:rgba(232,82,26,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:10px;font-weight:800;color:#E8521A;flex-shrink:0">APX</div>
+              <div><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:#E8521A">APEXO</div><div style="font-size:12px;color:var(--mu)">Industrial submersible pumps</div></div>
+              <div style="margin-left:auto;color:var(--lm)">›</div>
+            </div>
+            <div onclick="go('vivotek')" style="display:flex;align-items:center;gap:12px;padding:12px;border:1.5px solid var(--bd);border-radius:10px;cursor:pointer;background:#fff;transition:all .18s" onmouseover="this.style.borderColor='#4DA8C4'" onmouseout="this.style.borderColor='var(--bd)'">
+              <div style="width:40px;height:40px;background:rgba(77,168,196,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:10px;font-weight:800;color:#4DA8C4;flex-shrink:0">VTK</div>
+              <div><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:#4DA8C4">VIVOTEK</div><div style="font-size:12px;color:var(--mu)">Premium borewell pumps</div></div>
+              <div style="margin-left:auto;color:var(--lm)">›</div>
+            </div>
+          </div>
+        </div>
+        <div class="cf-box">
+          <div class="cf-tit">Send an Enquiry</div>
+          <div class="frow2">
+            <div class="fg"><label class="fl">First Name</label><input type="text" class="finp" id="cf-fn" placeholder="Rahul"></div>
+            <div class="fg"><label class="fl">Last Name</label><input type="text" class="finp" id="cf-ln" placeholder="Sharma"></div>
+          </div>
+          <div class="fg"><label class="fl">Email Address *</label><input type="email" class="finp" id="cf-em" placeholder="rahul@example.com"></div>
+          <div class="fg"><label class="fl">Phone Number</label><input type="tel" class="finp" id="cf-ph" placeholder="+91 98765 43210"></div>
+          <div class="fg">
+            <label class="fl">Brand Interest</label>
+            <select class="finp" id="cf-br">
+              <option value="">Select Brand (Optional)</option>
+              <option value="APEXO">APEXO</option>
+              <option value="VIVOTEK">VIVOTEK</option>
+              <option value="Both">Both Brands</option>
+            </select>
+          </div>
+          <div class="fg"><label class="fl">Message</label><textarea class="finp" id="cf-msg" rows="3" placeholder="I'd like to enquire about..." style="resize:vertical"></textarea></div>
+          <button class="btn btn-p btn-full btn-lg" onclick="sendEnquiry()">Send Enquiry →</button>
+          <p style="text-align:center;font-size:12px;color:var(--lm);margin-top:10px">We'll respond within 1 business day</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  `);
+}
+
+/* ══════════════════════════════════════════════════
+   PAGE: CART
+══════════════════════════════════════════════════ */
+function pageCart(){
+  const isEmpty = cart.length===0;
+  const tot = cartTotal();
+  const itemsHTML = isEmpty ? `
+    <div class="empty" style="padding:60px 20px">
+      <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:var(--bd)"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <div class="empty" style="padding:16px 0 0">
+        <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px">Your cart is empty</div>
+        <p style="margin-bottom:20px;color:var(--mu)">Add some pumps to get started!</p>
+        <button class="btn btn-p" onclick="go('products')">Browse Products</button>
+      </div>
+    </div>` : cart.map(i=>`
+    <div class="cart-item">
+      <div class="ci-thumb">${pumpSVG(46)}</div>
+      <div style="flex:1;min-width:0">
+        <div class="ci-brand">${i.bname}</div>
+        <div class="ci-name">${i.specs.power} · ${i.specs.stages} Stage · ${i.specs.bore}</div>
+        <div class="ci-price">${fmt(i.price)}</div>
+        <div class="qty-ctrl">
+          <button class="qty-b" onclick="updQty(${i.id},-1)">−</button>
+          <span class="qty-v">${i.qty}</span>
+          <button class="qty-b" onclick="updQty(${i.id},1)">+</button>
+        </div>
+      </div>
+      <button class="rm-b" onclick="remCart(${i.id})" title="Remove">${xSVG()}</button>
+    </div>`).join('');
+
+  setApp(`
+  <section class="pg-hero">
+    <div class="con">
+      <div class="hero-badge">My Cart</div>
+      <h1>Your Cart${isEmpty?'':` <span style="font-size:.5em;color:rgba(255,255,255,.5)">(${cartCount()} item${cartCount()>1?'s':''})</span>`}</h1>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="con">
+      <div class="${isEmpty?'':'cart-layout'}">
+        <div>
+          <div class="cart-box">${itemsHTML}</div>
+          ${isEmpty?'':`<button class="btn btn-ol" style="margin-top:14px" onclick="go('products')">← Continue Shopping</button>`}
+        </div>
+        ${isEmpty?'':`
+        <div class="order-box">
+          <div class="order-tit">Order Summary</div>
+          ${cart.map(i=>`<div class="o-row"><span>${i.bname} ${i.specs.power} ×${i.qty}</span><span>${fmt(i.price*i.qty)}</span></div>`).join('')}
+          <div class="o-row"><span>Shipping</span><span style="color:#10B981;font-weight:600">FREE</span></div>
+          <div class="o-total"><span>Total</span><span>${fmt(tot)}</span></div>
+          <div class="co-form">
+            <div class="co-tit">Delivery Details</div>
+            <div class="frow2">
+              <div class="fg"><label class="fl">First Name *</label><input type="text" class="finp" id="co-fn" placeholder="Rahul"></div>
+              <div class="fg"><label class="fl">Last Name *</label><input type="text" class="finp" id="co-ln" placeholder="Sharma"></div>
+            </div>
+            <div class="fg"><label class="fl">Email *</label><input type="email" class="finp" id="co-em" placeholder="rahul@example.com"></div>
+            <div class="fg"><label class="fl">Mobile *</label><input type="tel" class="finp" id="co-ph" placeholder="+91 98765 43210"></div>
+            <div class="fg"><label class="fl">Delivery Address *</label><input type="text" class="finp" id="co-ad" placeholder="Street, City, State, PIN Code"></div>
+            <button class="rzp-btn" onclick="doPayment()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.6 14.5L7.9 12l7.7-5v9.5z" fill="white"/></svg>
+              Pay with Razorpay
+            </button>
+            <div class="secure">🔒 256-bit SSL · UPI · Cards · Net Banking · Wallets</div>
+          </div>
+        </div>`}
+      </div>
+    </div>
+  </section>
+  `);
+}
+
+/* ══════════════════════════════════════════════════
+   CONTACT FORM
+══════════════════════════════════════════════════ */
+function sendEnquiry(){
+  const em = document.getElementById('cf-em')?.value.trim();
+  const fn = document.getElementById('cf-fn')?.value.trim();
+  if(!em){ showToast('Please enter your email address.'); return; }
+  const ln = document.getElementById('cf-ln')?.value||'';
+  const ph = document.getElementById('cf-ph')?.value||'';
+  const br = document.getElementById('cf-br')?.value||'General';
+  const msg = document.getElementById('cf-msg')?.value||'';
+  const sub = encodeURIComponent(`Pump Enquiry — ${br} | Sikhu Innovations`);
+  const body = encodeURIComponent(`Name: ${fn} ${ln}\nEmail: ${em}\nPhone: ${ph}\nBrand: ${br}\n\nMessage:\n${msg}\n\n---\nSent from Sikhu Innovations website`);
+  window.location.href = `mailto:${CFG.email}?subject=${sub}&body=${body}`;
+}
+
+/* ══════════════════════════════════════════════════
+   RAZORPAY CHECKOUT
+══════════════════════════════════════════════════ */
+function doPayment(){
+  const fn = document.getElementById('co-fn')?.value.trim();
+  const ln = document.getElementById('co-ln')?.value.trim();
+  const em = document.getElementById('co-em')?.value.trim();
+  const ph = document.getElementById('co-ph')?.value.trim();
+  const ad = document.getElementById('co-ad')?.value.trim();
+  if(!fn||!ln||!em||!ph||!ad){ showToast('Please fill in all delivery details.'); return; }
+  if(!/^\S+@\S+\.\S+$/.test(em)){ showToast('Please enter a valid email address.'); return; }
+  if(!cart.length){ showToast('Your cart is empty.'); return; }
+  const amt = cartTotal();
+  /*
+   ─────────────────────────────────────────────
+   RAZORPAY SETUP GUIDE:
+   1. Sign up at https://razorpay.com
+   2. Settings → API Keys → Copy Key ID
+   3. Replace 'YOUR_RAZORPAY_KEY_ID' in CFG above
+   4. For production: create order on backend first
+      POST /v1/orders → get order_id → add below
+   5. Verify payment signature on your backend
+   ─────────────────────────────────────────────
+  */
+  const opts = {
+    key         : CFG.rzpKey,
+    amount      : amt * 100,  // paise
+    currency    : 'INR',
+    name        : CFG.shop,
+    description : `Submersible Pump Order — ${cartCount()} item${cartCount()>1?'s':''}`,
+    // order_id : 'order_XXXXXXXXXX', // ← add your backend order ID here
+    handler     : onPaySuccess,
+    prefill     : { name:`${fn} ${ln}`, email:em, contact:ph },
+    notes       : { address:ad, brands:cart.map(i=>i.bname).join(', ') },
+    theme       : { color: CFG.theme },
+    modal       : { ondismiss:()=>showToast('Payment cancelled. Your cart is saved.') }
+  };
+  const rzp = new Razorpay(opts);
+  rzp.on('payment.failed', r=>{ showToast('Payment failed. Please try again.'); console.error(r.error); });
+  rzp.open();
+}
+
+function onPaySuccess(resp){
+  const pid = resp.razorpay_payment_id || ('pay_sipl_'+Date.now());
+  const em  = document.getElementById('co-em')?.value || '';
+  cart = []; saveCart(); refreshBadge();
+  setApp(`
+  <section class="sec" style="min-height:70vh;display:flex;align-items:center">
+    <div class="con" style="text-align:center;max-width:500px;margin:0 auto">
+      <div style="width:80px;height:80px;background:var(--o);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px">
+        <svg width="36" height="36" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;margin-bottom:12px">Order Confirmed! 🎉</div>
+      <p style="color:var(--mu);font-size:15px;line-height:1.7;margin-bottom:24px">Payment successful! A confirmation will be sent to <strong>${em}</strong>. Our team will contact you for delivery coordination.</p>
+      <div style="background:var(--bg);border:1.5px solid var(--bd);border-radius:12px;padding:16px;margin-bottom:28px;text-align:left">
+        <div style="font-size:12px;color:var(--lm);margin-bottom:5px">Payment Reference ID</div>
+        <div style="font-family:monospace;font-size:13px;color:var(--o);word-break:break-all">${pid}</div>
+      </div>
+      <button class="btn btn-p btn-lg btn-full" onclick="go('products')">Continue Shopping</button>
+      <button class="btn btn-ol btn-full" style="margin-top:10px" onclick="go('contact')">Contact Us</button>
+    </div>
+  </section>
+  `);
+}
+
+/* ══════════════════════════════════════════════════
+   TOAST
+══════════════════════════════════════════════════ */
+let _toastTimer;
+function showToast(msg){
+  const el = document.getElementById('toast');
+  document.getElementById('toast-msg').textContent = msg;
+  el.classList.add('show');
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(()=>el.classList.remove('show'), 3400);
+}
+
+/* ══ INIT ══ */
+refreshBadge();
 </script>
 </body>
 </html>

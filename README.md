@@ -1,31 +1,52 @@
-# AssessmentHelp — Expert Assessment Writing Services
+# Sikhu Innovations Pvt. Ltd. — Website
 
-A professional single-page website for assessment writing services.
+Official website for Sikhu Innovations Pvt. Ltd., featuring APEXO & VIVOTEK submersible pump brands with online ordering via Razorpay.
 
-## 🚀 GitHub Pages Deployment
+## 🌐 Live Site
+`https://YOUR-USERNAME.github.io/sikhu-innovations/`
 
-This site is live at: `https://<your-username>.github.io/<repo-name>/`
-
-## 📁 Structure
-
+## 📁 Files
 ```
-assessment-help/
-├── index.html     ← The entire site (all-in-one)
-├── .nojekyll      ← Disables Jekyll processing on GitHub Pages
+sikhu-innovations/
+├── index.html    ← Full website (all-in-one)
+├── .nojekyll     ← Disables Jekyll on GitHub Pages
 └── README.md
 ```
 
-## 🔧 Setup Steps
+## 🚀 Deploy to GitHub Pages
 
-1. Create a new GitHub repository
-2. Push these files to the `main` branch
-3. Go to **Settings → Pages**
-4. Set Source to **Deploy from a branch** → `main` / `root`
-5. Save — your site will be live in ~30 seconds
+### Step 1 — Push to GitHub
+Open PowerShell and run:
+```powershell
+cd "C:\Users\Baist\.gemini\antigravity-ide\scratch\sikhu-innovations"
+git init
+git add .
+git commit -m "Launch Sikhu Innovations website"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/sikhu-innovations.git
+git push -u origin main
+```
 
-## ✏️ Before Going Live
+### Step 2 — Enable GitHub Pages
+1. Go to your repo on GitHub
+2. Click **Settings** → **Pages**
+3. Under Source: **Deploy from a branch** → `main` → `/ (root)`
+4. Click **Save**
+5. ✅ Live in ~30 seconds at `https://YOUR-USERNAME.github.io/sikhu-innovations/`
 
-Replace these placeholder values in `index.html`:
-- `https://wa.me/your-number` → your actual WhatsApp number (e.g. `https://wa.me/919876543210`)
-- `help@assessmenthelp.io` → your real email
-- Phone numbers in the footer
+## 🔑 Before Going Live — Set Your Razorpay Key
+
+In `index.html`, find line ~364:
+```js
+rzpKey: 'YOUR_RAZORPAY_KEY_ID',
+```
+Replace with your real key from: https://dashboard.razorpay.com → Settings → API Keys
+
+## ✅ What Works on GitHub Pages
+- ✅ All pages (Home, Products, APEXO, VIVOTEK, About, Contact, Cart)
+- ✅ Hash-based routing (#home, #products, etc.)
+- ✅ Add to Cart + localStorage persistence
+- ✅ Razorpay payment checkout
+- ✅ Contact enquiry via mailto
+- ✅ Google Fonts (Syne + DM Sans)
+- ✅ Fully responsive (mobile, tablet, desktop)
