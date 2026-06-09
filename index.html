@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sikhu Innovations Pvt. Ltd. — APEXO &amp; VIVOTEK</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <style>
 /* ══ VARIABLES ══════════════════════════════════════════ */
@@ -24,7 +25,7 @@
 /* ══ RESET ══════════════════════════════════════════════ */
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;color:var(--n);background:var(--bg);overflow-x:hidden}
+body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--n);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 button{cursor:pointer;font-family:inherit;border:none}
 img{max-width:100%}
@@ -41,11 +42,11 @@ img{max-width:100%}
 .gap8{gap:8px}.gap12{gap:12px}.gap16{gap:16px}
 /* ══ TYPOGRAPHY ═════════════════════════════════════════ */
 .s-tag{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--o);margin-bottom:9px;display:block}
-.s-tit{font-family:'Syne',sans-serif;font-size:clamp(24px,3vw,34px);font-weight:800;color:var(--n);letter-spacing:-.5px}
-.s-tit-w{font-family:'Syne',sans-serif;font-size:clamp(24px,3vw,34px);font-weight:800;color:var(--w);letter-spacing:-.5px}
-.syne{font-family:'Syne',sans-serif}
+.s-tit{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(24px,3vw,34px);font-weight:800;color:var(--n);letter-spacing:-.5px}
+.s-tit-w{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(24px,3vw,34px);font-weight:800;color:var(--w);letter-spacing:-.5px}
+.syne{font-family:'Plus Jakarta Sans',sans-serif}
 /* ══ BUTTONS ════════════════════════════════════════════ */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .18s;border:none;text-decoration:none;font-family:'DM Sans',sans-serif}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .18s;border:none;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif}
 .btn-p{background:var(--o);color:var(--w)}.btn-p:hover{background:var(--o2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,82,26,.3)}
 .btn-n{background:var(--n);color:var(--w)}.btn-n:hover{opacity:.85;transform:translateY(-1px)}
 .btn-ol{background:transparent;color:var(--n);border:1.5px solid var(--bd)}.btn-ol:hover{border-color:var(--n);background:rgba(13,27,62,.04)}
@@ -58,7 +59,7 @@ img{max-width:100%}
 .nav-in{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;gap:28px}
 .nav-logo{display:flex;align-items:center;gap:11px;flex-shrink:0}
 .nav-logo-svg{width:42px;height:42px;flex-shrink:0}
-.nav-logo-txt{font-family:'Syne',sans-serif;color:var(--w);font-size:14px;font-weight:700;line-height:1.25}
+.nav-logo-txt{font-family:'Plus Jakarta Sans',sans-serif;color:var(--w);font-size:14px;font-weight:700;line-height:1.25}
 .nav-logo-txt small{display:block;font-size:10px;font-weight:400;color:rgba(255,255,255,.38);letter-spacing:.3px}
 .nav-links{display:flex;list-style:none;gap:2px;flex:1}
 .nav-links a{display:block;color:rgba(255,255,255,.6);font-size:13.5px;font-weight:500;padding:7px 12px;border-radius:7px;transition:all .18s}
@@ -76,17 +77,17 @@ img{max-width:100%}
 .pg-hero::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.02);bottom:-100px;left:-80px;pointer-events:none}
 .hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(232,82,26,.14);border:1px solid rgba(232,82,26,.28);color:var(--o);font-size:12px;font-weight:600;padding:5px 13px;border-radius:100px;margin-bottom:18px}
 .hero-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--o)}
-.pg-hero h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4.5vw,52px);font-weight:800;color:var(--w);letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
+.pg-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,4.5vw,52px);font-weight:800;color:var(--w);letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
 .pg-hero p{color:rgba(255,255,255,.52);font-size:16px;line-height:1.75;max-width:500px;margin-bottom:30px}
 .hero-2col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .hero-stats{display:flex;gap:32px;margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08)}
-.hs-n{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--w)}
+.hs-n{font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:var(--w)}
 .hs-l{font-size:12px;color:rgba(255,255,255,.36);margin-top:2px}
 .hero-visual{display:flex;flex-direction:column;gap:14px}
 .hv-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:14px;transition:all .2s;cursor:pointer}
 .hv-card:hover{background:rgba(255,255,255,.09);transform:translateX(4px)}
-.hv-mark{width:44px;height:44px;border-radius:10px;background:rgba(232,82,26,.15);color:var(--o);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:10px;font-weight:800;letter-spacing:.5px;flex-shrink:0}
-.hv-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--w)}
+.hv-mark{width:44px;height:44px;border-radius:10px;background:rgba(232,82,26,.15);color:var(--o);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:800;letter-spacing:.5px;flex-shrink:0}
+.hv-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:800;color:var(--w)}
 .hv-sub{font-size:12px;color:rgba(255,255,255,.42);margin-top:2px}
 .hv-arr{margin-left:auto;color:rgba(255,255,255,.2);font-size:18px}
 /* ══ FEATURE BAR ════════════════════════════════════════ */
@@ -99,10 +100,10 @@ img{max-width:100%}
 /* ══ BRAND CARDS ════════════════════════════════════════ */
 .brand-card{background:var(--w);border:1.5px solid var(--bd);border-radius:16px;padding:36px;cursor:pointer;transition:all .24s;position:relative;overflow:hidden}
 .brand-card:hover{transform:translateY(-5px);box-shadow:var(--sh2);border-color:var(--o)}
-.bc-name{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;letter-spacing:1px;color:var(--n);margin-bottom:6px}
+.bc-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:800;letter-spacing:1px;color:var(--n);margin-bottom:6px}
 .bc-sub{font-size:13.5px;color:var(--mu);margin-bottom:20px}
 .bc-stats{display:flex;gap:24px;margin-bottom:24px}
-.bs-n{font-family:'Syne',sans-serif;font-size:21px;font-weight:800;color:var(--o)}
+.bs-n{font-family:'Plus Jakarta Sans',sans-serif;font-size:21px;font-weight:800;color:var(--o)}
 .bs-l{font-size:11.5px;color:var(--lm);margin-top:2px}
 .bc-bg{position:absolute;right:20px;bottom:20px;opacity:.05;pointer-events:none}
 /* ══ FILTER TABS ════════════════════════════════════════ */
@@ -114,15 +115,15 @@ img{max-width:100%}
 .prod-card{background:var(--w);border-radius:14px;border:1.5px solid var(--bd);overflow:hidden;display:flex;flex-direction:column;transition:all .24s}
 .prod-card:hover{transform:translateY(-4px);box-shadow:var(--sh2);border-color:var(--o)}
 .pc-img{height:176px;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:20px;position:relative;border-bottom:1.5px solid var(--bd)}
-.pc-badge{position:absolute;top:11px;left:11px;background:var(--n);color:var(--w);font-size:10.5px;font-weight:800;letter-spacing:.7px;padding:3px 10px;border-radius:100px;font-family:'Syne',sans-serif}
+.pc-badge{position:absolute;top:11px;left:11px;background:var(--n);color:var(--w);font-size:10.5px;font-weight:800;letter-spacing:.7px;padding:3px 10px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif}
 .pc-info{padding:16px;display:flex;flex-direction:column;flex:1}
-.pc-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;line-height:1.35;margin-bottom:5px;color:var(--n)}
+.pc-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;line-height:1.35;margin-bottom:5px;color:var(--n)}
 .pc-desc{font-size:12px;color:var(--mu);line-height:1.55;margin-bottom:10px}
 .pc-chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
 .chip{font-size:11px;font-weight:600;padding:3px 8px;border-radius:100px;border:1px solid var(--bd);background:var(--bg);color:var(--n)}
 .chip-o{background:rgba(232,82,26,.08);border-color:rgba(232,82,26,.22);color:var(--o)}
 .pc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;gap:8px}
-.pc-price{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--n)}
+.pc-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;color:var(--n)}
 .pc-mrp{font-size:12px;color:var(--lm);text-decoration:line-through}
 .pc-acts{display:flex;gap:6px}
 .btn-det{padding:7px 12px;border-radius:7px;font-size:12px;font-weight:600;border:1.5px solid var(--bd);background:transparent;color:var(--mu);transition:all .16s;cursor:pointer}
@@ -132,19 +133,19 @@ img{max-width:100%}
 /* ══ PRODUCT DETAIL ═════════════════════════════════════ */
 .pd-layout{display:grid;grid-template-columns:480px 1fr;gap:56px;align-items:start}
 .pd-img-box{background:var(--bg);border:1.5px solid var(--bd);border-radius:16px;padding:48px;display:flex;align-items:center;justify-content:center;min-height:360px;position:sticky;top:80px}
-.pd-badge{display:inline-block;background:var(--n);color:var(--w);font-size:11px;font-weight:800;letter-spacing:.8px;padding:4px 12px;border-radius:100px;font-family:'Syne',sans-serif;margin-bottom:14px}
-.pd-name{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;letter-spacing:-.5px;line-height:1.2;margin-bottom:14px}
+.pd-badge{display:inline-block;background:var(--n);color:var(--w);font-size:11px;font-weight:800;letter-spacing:.8px;padding:4px 12px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:14px}
+.pd-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;letter-spacing:-.5px;line-height:1.2;margin-bottom:14px}
 .pd-desc{font-size:15px;color:var(--mu);line-height:1.75;margin-bottom:24px;padding-bottom:24px;border-bottom:1.5px solid var(--bd)}
 .spec-g{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px}
 .spec-box{background:var(--bg);border:1.5px solid var(--bd);border-radius:10px;padding:14px;text-align:center}
-.spec-val{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:var(--o)}
+.spec-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;color:var(--o)}
 .spec-lbl{font-size:11px;color:var(--mu);margin-top:3px}
 .feat-list{margin-bottom:26px}
 .feat-row{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--n);padding:9px 0;border-bottom:1px solid var(--bg)}
 .feat-row:last-child{border:none}
 .feat-dot{width:22px;height:22px;border-radius:50%;background:var(--o);color:var(--w);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .pd-price-wrap{background:var(--bg);border:1.5px solid var(--bd);border-radius:12px;padding:20px;margin-bottom:16px}
-.pd-price{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:var(--n)}
+.pd-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:800;color:var(--n)}
 .pd-mrp{font-size:14px;color:var(--lm);text-decoration:line-through;margin-top:2px}
 .pd-save{font-size:13px;color:var(--o);font-weight:600;margin-top:4px}
 .pd-btns{display:flex;gap:12px}
@@ -164,10 +165,10 @@ img{max-width:100%}
 .ci-row{display:flex;align-items:center;gap:14px;font-size:14.5px}
 .ci-ico{width:44px;height:44px;border-radius:10px;background:var(--bg);border:1.5px solid var(--bd);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--n)}
 .cf-box{background:var(--w);border:1.5px solid var(--bd);border-radius:16px;padding:28px}
-.cf-tit{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px}
+.cf-tit{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px}
 .fg{margin-bottom:14px}
 .fl{display:block;font-size:12.5px;font-weight:600;color:var(--mu);margin-bottom:6px}
-.finp{width:100%;padding:11px 14px;border:1.5px solid var(--bd);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .18s;background:var(--bg);color:var(--n)}
+.finp{width:100%;padding:11px 14px;border:1.5px solid var(--bd);border-radius:8px;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;outline:none;transition:border-color .18s;background:var(--bg);color:var(--n)}
 .finp:focus{border-color:var(--o);background:var(--w)}
 .frow2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 /* ══ CART PAGE ═══════════════════════════════════════════ */
@@ -177,8 +178,8 @@ img{max-width:100%}
 .cart-item:last-child{border-bottom:none}
 .ci-thumb{width:76px;height:76px;background:var(--bg);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1.5px solid var(--bd)}
 .ci-brand{font-size:11px;font-weight:800;letter-spacing:.6px;color:var(--o);margin-bottom:3px}
-.ci-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:3px}
-.ci-price{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--o)}
+.ci-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;margin-bottom:3px}
+.ci-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:var(--o)}
 .qty-ctrl{display:flex;align-items:center;gap:8px;margin-top:8px}
 .qty-b{width:27px;height:27px;border:1.5px solid var(--bd);border-radius:6px;background:var(--w);font-size:15px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s}
 .qty-b:hover{border-color:var(--o);color:var(--o)}
@@ -186,12 +187,12 @@ img{max-width:100%}
 .rm-b{margin-left:auto;background:none;border:none;color:var(--lm);padding:4px;cursor:pointer;transition:color .16s}
 .rm-b:hover{color:#EF4444}
 .order-box{background:var(--w);border:1.5px solid var(--bd);border-radius:14px;padding:24px;position:sticky;top:80px}
-.order-tit{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;padding-bottom:14px;border-bottom:1.5px solid var(--bd);margin-bottom:18px}
+.order-tit{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;padding-bottom:14px;border-bottom:1.5px solid var(--bd);margin-bottom:18px}
 .o-row{display:flex;justify-content:space-between;font-size:13.5px;color:var(--mu);margin-bottom:8px}
-.o-total{display:flex;justify-content:space-between;font-family:'Syne',sans-serif;font-size:19px;font-weight:800;padding-top:14px;border-top:1.5px solid var(--bd);margin:12px 0 20px}
+.o-total{display:flex;justify-content:space-between;font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;padding-top:14px;border-top:1.5px solid var(--bd);margin:12px 0 20px}
 .co-form{border-top:1.5px solid var(--bd);padding-top:20px}
-.co-tit{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:14px}
-.rzp-btn{width:100%;background:#528FF0;color:var(--w);border:none;padding:14px;border-radius:10px;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .18s;font-family:'Syne',sans-serif;margin-top:14px;cursor:pointer}
+.co-tit{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;margin-bottom:14px}
+.rzp-btn{width:100%;background:#528FF0;color:var(--w);border:none;padding:14px;border-radius:10px;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .18s;font-family:'Plus Jakarta Sans',sans-serif;margin-top:14px;cursor:pointer}
 .rzp-btn:hover{background:#3d7de8;transform:translateY(-1px);box-shadow:0 8px 20px rgba(82,143,240,.35)}
 .secure{text-align:center;font-size:12px;color:var(--lm);margin-top:10px}
 /* ══ FOOTER ══════════════════════════════════════════════ */
@@ -200,7 +201,7 @@ img{max-width:100%}
 .footer-desc{font-size:13.5px;color:rgba(255,255,255,.42);line-height:1.72;margin:13px 0 20px;max-width:230px}
 .fc a{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.5);font-size:13.5px;text-decoration:none;margin-bottom:9px;transition:color .17s}
 .fc a:hover{color:var(--o)}
-.fh{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:16px}
+.fh{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:16px}
 .flinks{list-style:none;display:flex;flex-direction:column;gap:9px}
 .flinks a{color:rgba(255,255,255,.45);font-size:13.5px;text-decoration:none;transition:color .17s}
 .flinks a:hover{color:var(--o)}
@@ -214,7 +215,7 @@ img{max-width:100%}
 .modal{background:var(--w);border-radius:16px;max-width:460px;width:100%;max-height:90vh;overflow-y:auto;transform:scale(.96);transition:transform .26s}
 .ov.show .modal{transform:scale(1)}
 .m-h{padding:20px 24px;border-bottom:1.5px solid var(--bd);display:flex;align-items:center;justify-content:space-between}
-.m-tit{font-family:'Syne',sans-serif;font-size:20px;font-weight:800}
+.m-tit{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800}
 .x-btn{width:32px;height:32px;border-radius:7px;border:1.5px solid var(--bd);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .16s;color:var(--mu)}
 .x-btn:hover{background:var(--bg);color:var(--n)}
 /* ══ SUCCESS ══════════════════════════════════════════════ */
@@ -235,7 +236,7 @@ img{max-width:100%}
 .feat-strip-card{border-radius:14px;padding:28px;border:2px solid transparent;cursor:pointer;transition:all .22s}
 .feat-strip-card.ap{background:rgba(13,27,62,.04);border-color:var(--bd)}
 .feat-strip-card.ap:hover{border-color:var(--o);transform:translateY(-3px);box-shadow:var(--sh)}
-.fsc-name{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;letter-spacing:.8px;color:var(--n);margin-bottom:5px}
+.fsc-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:800;letter-spacing:.8px;color:var(--n);margin-bottom:5px}
 .fsc-sub{font-size:13.5px;color:var(--mu);margin-bottom:18px}
 /* ══ HAMBURGER BUTTON ═══════════════════════════════════ */
 .ham{display:none;flex-direction:column;gap:5px;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);align-items:center;justify-content:center;cursor:pointer;transition:background .18s;flex-shrink:0}
@@ -250,7 +251,7 @@ img{max-width:100%}
 .mob-drawer{position:fixed;top:0;right:-100%;width:280px;max-width:85vw;height:100%;background:var(--n);z-index:195;transition:right .3s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding-bottom:40px;border-left:1px solid rgba(255,255,255,.08);box-shadow:-8px 0 40px rgba(0,0,0,.35)}
 .mob-drawer.open{right:0}
 .mob-d-head{display:flex;align-items:center;justify-content:space-between;padding:0 18px;height:64px;border-bottom:1px solid rgba(255,255,255,.08)}
-.mob-d-logo{font-family:'Syne',sans-serif;color:#fff;font-size:14px;font-weight:700;line-height:1.2}
+.mob-d-logo{font-family:'Plus Jakarta Sans',sans-serif;color:#fff;font-size:14px;font-weight:700;line-height:1.2}
 .mob-d-logo small{display:block;font-size:10px;font-weight:400;color:rgba(255,255,255,.38)}
 .mob-close{width:32px;height:32px;border-radius:7px;border:1px solid rgba(255,255,255,.15);background:transparent;color:rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .16s}
 .mob-close:hover{background:rgba(255,255,255,.1);color:#fff}
@@ -260,7 +261,7 @@ img{max-width:100%}
 .mob-nav a.brand-link{color:rgba(232,82,26,.9)}
 .mob-nav a.brand-link:hover,.mob-nav a.brand-link.act{color:#fff;background:var(--o)}
 .mob-divider{height:1px;background:rgba(255,255,255,.07);margin:10px 12px}
-.mob-d-cart{margin:12px 12px 0;padding:14px 16px;background:var(--o);border-radius:8px;color:#fff;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:background .18s;border:none;width:calc(100% - 24px);font-family:'DM Sans',sans-serif}
+.mob-d-cart{margin:12px 12px 0;padding:14px 16px;background:var(--o);border-radius:8px;color:#fff;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:background .18s;border:none;width:calc(100% - 24px);font-family:'Plus Jakarta Sans',sans-serif}
 .mob-d-cart:hover{background:var(--o2)}
 /* ══ RESPONSIVE ══════════════════════════════════════════ */
 @media(max-width:1100px){.g4{grid-template-columns:repeat(3,1fr)}.pd-layout{grid-template-columns:1fr}}
@@ -357,12 +358,7 @@ img{max-width:100%}
 <nav class="nav">
   <div class="nav-in">
     <a href="#home" class="nav-logo" onclick="go('home')">
-      <svg class="nav-logo-svg" viewBox="0 0 80 80">
-        <circle cx="40" cy="40" r="40" fill="#0D1B3E"/>
-        <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.5"/>
-        <text x="40" y="37" text-anchor="middle" fill="white" font-family="Arial Black,Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="2">SIPL</text>
-        <text x="40" y="52" text-anchor="middle" fill="rgba(255,255,255,.6)" font-family="Arial,sans-serif" font-size="5.2" letter-spacing=".5">SIKHU INNOVATIONS PVT LTD</text>
-      </svg>
+      <img src="logo.png" alt="SIPL Logo" style="width:42px;height:42px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#fff">
       <div class="nav-logo-txt">Sikhu Innovations<small>Pvt. Ltd.</small></div>
     </a>
     <ul class="nav-links">
@@ -424,37 +420,34 @@ img{max-width:100%}
     <div class="footer-g">
       <div>
         <a href="#home" onclick="go('home')" class="nav-logo" style="display:inline-flex">
-          <svg style="width:40px;height:40px;flex-shrink:0" viewBox="0 0 80 80">
-            <circle cx="40" cy="40" r="40" fill="#0D1B3E"/>
-            <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.5"/>
-            <text x="40" y="37" text-anchor="middle" fill="white" font-family="Arial Black,Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="2">SIPL</text>
-            <text x="40" y="52" text-anchor="middle" fill="rgba(255,255,255,.6)" font-family="Arial,sans-serif" font-size="5.2" letter-spacing=".5">SIKHU INNOVATIONS PVT LTD</text>
-          </svg>
+          <img src="logo.png" alt="SIPL Logo" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#fff">
           <div class="nav-logo-txt" style="color:#fff">Sikhu Innovations<small>Pvt. Ltd.</small></div>
         </a>
         <p class="footer-desc">India's trusted manufacturer of submersible pumps through APEXO and VIVOTEK brands. Quality and performance you can rely on.</p>
         <div class="fc">
           <a href="mailto:sikhu.limited@gmail.com">✉ sikhu.limited@gmail.com</a>
+          <a href="https://www.instagram.com/sikhu.innovations?igsh=MXg2YTJ5cTN3bTI1NQ==" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:8px;color:rgba(255,255,255,.55);font-size:13px;transition:color .2s" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='rgba(255,255,255,.55)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            @sikhu.innovations
+          </a>
         </div>
       </div>
       <div>
         <div class="fh" style="color:#E8521A">APEXO</div>
         <ul class="flinks">
-          <li><a href="#apexo" onclick="go('apexo')">1 HP Pumps</a></li>
-          <li><a href="#apexo" onclick="go('apexo')">1.5 HP Pumps</a></li>
-          <li><a href="#apexo" onclick="go('apexo')">2 HP Pumps</a></li>
-          <li><a href="#apexo" onclick="go('apexo')">3 Inch Bore</a></li>
-          <li><a href="#apexo" onclick="go('apexo')">4 Inch Bore</a></li>
+          <li><a href="#apexo" onclick="go('apexo')">Submersible Pumps</a></li>
+          <li><a href="#apexo" onclick="go('apexo')">3 Inch Bore Pumps</a></li>
+          <li><a href="#apexo" onclick="go('apexo')">4 Inch Bore Pumps</a></li>
+          <li><a href="#apexo" onclick="go('apexo')">0.5 HP to 3 HP Range</a></li>
         </ul>
       </div>
       <div>
         <div class="fh" style="color:#4DA8C4">VIVOTEK</div>
         <ul class="flinks">
-          <li><a href="#vivotek" onclick="go('vivotek')">1 HP Pumps</a></li>
-          <li><a href="#vivotek" onclick="go('vivotek')">1.5 HP Pumps</a></li>
-          <li><a href="#vivotek" onclick="go('vivotek')">2 HP Pumps</a></li>
-          <li><a href="#vivotek" onclick="go('vivotek')">3 Inch Bore</a></li>
-          <li><a href="#vivotek" onclick="go('vivotek')">4 Inch Bore</a></li>
+          <li><a href="#vivotek" onclick="go('vivotek')">Submersible Pumps</a></li>
+          <li><a href="#vivotek" onclick="go('vivotek')">3 Inch Bore Pumps</a></li>
+          <li><a href="#vivotek" onclick="go('vivotek')">4 Inch Bore Pumps</a></li>
+          <li><a href="#vivotek" onclick="go('vivotek')">0.5 HP to 3 HP Range</a></li>
         </ul>
       </div>
       <div>
@@ -707,18 +700,17 @@ function pageHome(){
     <div class="con">
       <div class="hero-2col">
         <div>
-          <div class="hero-badge">Trusted Indian Manufacturer · ISI Certified</div>
+          <div class="hero-badge">Trusted Indian Manufacturer</div>
           <h1>Powering India's<br>Water Supply.</h1>
           <p>Sikhu Innovations Pvt. Ltd. manufactures premium submersible pumps through two trusted brands — <strong style="color:#E8521A">APEXO</strong> and <strong style="color:#4DA8C4">VIVOTEK</strong> — for agriculture, homes, and industry.</p>
           <div class="flex gap12">
-            <button class="btn btn-p btn-lg" onclick="go('apexo')">APEXO Pumps →</button>
-            <button class="btn btn-olw btn-lg" onclick="go('vivotek')">VIVOTEK Pumps →</button>
+            <button class="btn btn-p btn-lg" onclick="go('products')">Explore Products →</button>
           </div>
           <div class="hero-stats">
-            <div><div class="hs-n">12+</div><div class="hs-l">Pump Models</div></div>
+            <div><div class="hs-n">0.5–3</div><div class="hs-l">HP Range</div></div>
             <div><div class="hs-n">2 Yr</div><div class="hs-l">Warranty</div></div>
-            <div><div class="hs-n">ISI</div><div class="hs-l">Certified</div></div>
-            <div><div class="hs-n">220V</div><div class="hs-l">Single Phase</div></div>
+            <div><div class="hs-n">Pan</div><div class="hs-l">India Reach</div></div>
+            <div><div class="hs-n">24×7</div><div class="hs-l">Support</div></div>
           </div>
         </div>
         <div class="hero-visual">
@@ -743,7 +735,7 @@ function pageHome(){
     <div class="con"><div class="fbar-g">
       <div class="f-item">
         <div class="f-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <div><div class="f-lbl">ISI Certified Products</div><div class="f-sub">BIS Standards Approved</div></div>
+        <div><div class="f-lbl">Quality Assured</div><div class="f-sub">Tested &amp; reliable products</div></div>
       </div>
       <div class="f-item">
         <div class="f-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
@@ -763,31 +755,32 @@ function pageHome(){
   <!-- OUR BRANDS -->
   <section class="sec">
     <div class="con">
-      <div class="section-head">
+      <div class="section-head" style="margin-bottom:32px">
         <span class="s-tag">Our Brands</span>
-        <div class="s-tit">Two Brands. One Promise of Quality.</div>
+        <div class="s-tit" style="font-weight:700;letter-spacing:-.3px">Two Brands. One Promise of Quality.</div>
       </div>
       <div class="g2">
-        <div class="brand-card" onclick="go('apexo')">
-          <div class="bc-name">APEXO</div>
+        <div class="brand-card" onclick="go('apexo')" style="border-top:3px solid #E8521A">
+          <div class="bc-name" style="color:#E8521A">APEXO</div>
           <div class="bc-sub">Industrial-Grade Submersible Pump Solutions</div>
-          <div class="bc-stats">
-            <div><div class="bs-n">6</div><div class="bs-l">Models</div></div>
-            <div><div class="bs-n">3″ &amp; 4″</div><div class="bs-l">Bore Sizes</div></div>
-            <div><div class="bs-n">1–2 HP</div><div class="bs-l">Power Range</div></div>
+          <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:24px">
+            <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#E8521A;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Submersible Pumps for Borewells</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#E8521A;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Available in 3 Inch &amp; 4 Inch Bore</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#E8521A;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Energy Efficient &middot; Long Service Life</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#E8521A;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Ideal for Agriculture &amp; Domestic Use</div>
           </div>
-          <button class="btn btn-p btn-sm" onclick="event.stopPropagation();go('apexo')">Browse APEXO →</button>
           <div class="bc-bg">${pumpSVG(160)}</div>
         </div>
-        <div class="brand-card" onclick="go('vivotek')">
-          <div class="bc-name">VIVOTEK</div>
+        <div class="brand-card" onclick="go('vivotek')" style="border-top:3px solid #4DA8C4">
+          <div class="bc-name" style="color:#4DA8C4">VIVOTEK</div>
           <div class="bc-sub">Premium Borewell Submersible Pump Range</div>
-          <div class="bc-stats">
-            <div><div class="bs-n">6</div><div class="bs-l">Models</div></div>
-            <div><div class="bs-n">3″ &amp; 4″</div><div class="bs-l">Bore Sizes</div></div>
-            <div><div class="bs-n">1–2 HP</div><div class="bs-l">Power Range</div></div>
+          <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:24px">
+            <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#4DA8C4;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Premium Submersible Borewell Pumps</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#4DA8C4;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Available in 3 Inch &amp; 4 Inch Bore</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#4DA8C4;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Corrosion-Resistant &middot; Low Maintenance</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#4DA8C4;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Suitable for Deep Borewell Extraction</div>
           </div>
-          <button class="btn btn-n btn-sm" onclick="event.stopPropagation();go('vivotek')">Browse VIVOTEK →</button>
+          <button class="btn btn-n btn-sm" onclick="event.stopPropagation();go('products')">View All Products &rarr;</button>
           <div class="bc-bg">${pumpSVG(160)}</div>
         </div>
       </div>
@@ -802,21 +795,57 @@ function pageHome(){
           <span class="s-tag">Featured Products</span>
           <div class="s-tit">Top Picks from Both Brands</div>
         </div>
-        <button class="btn btn-ol" onclick="go('products')">View All 12 Products →</button>
+        <button class="btn btn-ol" onclick="go('products')">View All Products &rarr;</button>
       </div>
       <div class="g4">${feat.map(prodCard).join('')}</div>
     </div>
   </section>
 
-  <!-- ABOUT SNIPPET -->
+  <!-- COMPANY INTRO -->
+  <section class="sec" style="background:var(--w)">
+    <div class="con">
+      <div class="g2" style="align-items:center;gap:56px">
+        <div>
+          <span class="s-tag">Who We Are</span>
+          <div class="s-tit" style="margin-bottom:18px">Built on Trust &amp; Quality</div>
+          <p style="color:var(--mu);font-size:15px;line-height:1.8;margin-bottom:16px">Sikhu Innovations Pvt. Ltd. is a dedicated Indian manufacturer of submersible pumps and borewell motors. Through our two brands &mdash; <strong style="color:#E8521A">APEXO</strong> and <strong style="color:#4DA8C4">VIVOTEK</strong> &mdash; we serve farmers, households, and businesses across India.</p>
+          <p style="color:var(--mu);font-size:15px;line-height:1.8;margin-bottom:28px">Every pump we manufacture is built with quality materials and tested for reliable performance, even in the most demanding conditions. We believe dependable water supply is a necessity &mdash; and we make sure our products deliver on that promise, every time.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn btn-p" onclick="go('about')">Our Story</button>
+            <button class="btn btn-ol" onclick="go('contact')">Contact Us</button>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <div style="background:var(--bg);border:1.5px solid var(--bd);border-radius:14px;padding:24px;text-align:center">
+            <div style="font-size:28px;font-weight:800;color:var(--o);font-family:'Plus Jakarta Sans',sans-serif">15+</div>
+            <div style="font-size:13px;color:var(--mu);margin-top:4px">Years of Manufacturing</div>
+          </div>
+          <div style="background:var(--bg);border:1.5px solid var(--bd);border-radius:14px;padding:24px;text-align:center">
+            <div style="font-size:28px;font-weight:800;color:var(--o);font-family:'Plus Jakarta Sans',sans-serif">2</div>
+            <div style="font-size:13px;color:var(--mu);margin-top:4px">Trusted Brands</div>
+          </div>
+          <div style="background:var(--bg);border:1.5px solid var(--bd);border-radius:14px;padding:24px;text-align:center">
+            <div style="font-size:28px;font-weight:800;color:var(--o);font-family:'Plus Jakarta Sans',sans-serif">Pan</div>
+            <div style="font-size:13px;color:var(--mu);margin-top:4px">India Distribution</div>
+          </div>
+          <div style="background:var(--bg);border:1.5px solid var(--bd);border-radius:14px;padding:24px;text-align:center">
+            <div style="font-size:28px;font-weight:800;color:var(--o);font-family:'Plus Jakarta Sans',sans-serif">2 Yr</div>
+            <div style="font-size:13px;color:var(--mu);margin-top:4px">Product Warranty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DARK CTA -->
   <section class="sec-dk">
     <div class="con">
       <div style="max-width:680px;margin:0 auto;text-align:center">
-        <span class="s-tag" style="display:block;text-align:center;margin-bottom:9px">About Sikhu Innovations</span>
-        <div class="s-tit-w" style="margin-bottom:18px">Delivering Trust Through Performance</div>
-        <p style="color:rgba(255,255,255,.55);font-size:15.5px;line-height:1.78;margin-bottom:32px">Sikhu Innovations Pvt. Ltd. is a growing Indian manufacturer of high-quality submersible pumps and motors. We are committed to delivering reliable, efficient, and durable water pumping solutions through our trusted brands APEXO and VIVOTEK.</p>
+        <span class="s-tag" style="display:block;text-align:center;margin-bottom:9px">Get in Touch</span>
+        <div class="s-tit-w" style="margin-bottom:18px">Looking for Reliable Submersible Pumps?</div>
+        <p style="color:rgba(255,255,255,.55);font-size:15px;line-height:1.78;margin-bottom:32px">Whether you need pumps for agriculture, domestic water supply, or commercial use &mdash; we have the right solution. Contact us for bulk orders, dealer enquiries, or product support.</p>
         <div class="flex gap12" style="justify-content:center;flex-wrap:wrap">
-          <button class="btn btn-p btn-lg" onclick="go('about')">Our Story</button>
+          <button class="btn btn-p btn-lg" onclick="go('products')">Browse All Products</button>
           <button class="btn btn-olw btn-lg" onclick="go('contact')">Contact Us</button>
         </div>
       </div>
@@ -843,10 +872,10 @@ function pageApexo(){
         <button class="btn btn-olw" onclick="go('vivotek')">View VIVOTEK →</button>
       </div>
       <div class="hero-stats">
-        <div><div class="hs-n">6</div><div class="hs-l">Models</div></div>
-        <div><div class="hs-n">3″ &amp; 4″</div><div class="hs-l">Bore Sizes</div></div>
-        <div><div class="hs-n">1–2 HP</div><div class="hs-l">Power Range</div></div>
-        <div><div class="hs-n">220V</div><div class="hs-l">Single Phase</div></div>
+        <div><div class="hs-n">0.5&ndash;3</div><div class="hs-l">HP Range</div></div>
+        <div><div class="hs-n">3&Prime; &amp; 4&Prime;</div><div class="hs-l">Bore Sizes</div></div>
+        <div><div class="hs-n">2 Yr</div><div class="hs-l">Warranty</div></div>
+        <div><div class="hs-n">24&times;7</div><div class="hs-l">Support</div></div>
       </div>
     </div>
   </section>
@@ -878,10 +907,10 @@ function pageVivotek(){
         <button class="btn btn-olw" onclick="go('apexo')">View APEXO →</button>
       </div>
       <div class="hero-stats">
-        <div><div class="hs-n">6</div><div class="hs-l">Models</div></div>
-        <div><div class="hs-n">3″ &amp; 4″</div><div class="hs-l">Bore Sizes</div></div>
-        <div><div class="hs-n">1–2 HP</div><div class="hs-l">Power Range</div></div>
-        <div><div class="hs-n">220V</div><div class="hs-l">Single Phase</div></div>
+        <div><div class="hs-n">0.5&ndash;3</div><div class="hs-l">HP Range</div></div>
+        <div><div class="hs-n">3&Prime; &amp; 4&Prime;</div><div class="hs-l">Bore Sizes</div></div>
+        <div><div class="hs-n">2 Yr</div><div class="hs-l">Warranty</div></div>
+        <div><div class="hs-n">24&times;7</div><div class="hs-l">Support</div></div>
       </div>
     </div>
   </section>
@@ -941,7 +970,7 @@ function pageProduct(id){
           <div class="pd-badge">${p.bname}</div>
           <div class="pd-name">${p.name}</div>
           <div class="pd-desc">${p.desc}</div>
-          <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:10px">Specifications</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;margin-bottom:10px">Specifications</div>
           <div class="spec-g">
             <div class="spec-box"><div class="spec-val">${p.specs.power}</div><div class="spec-lbl">Power</div></div>
             <div class="spec-box"><div class="spec-val">${p.specs.stages}</div><div class="spec-lbl">Stages</div></div>
@@ -950,7 +979,7 @@ function pageProduct(id){
             <div class="spec-box"><div class="spec-val">${p.specs.voltage}</div><div class="spec-lbl">Voltage</div></div>
             <div class="spec-box"><div class="spec-val">2 Yr</div><div class="spec-lbl">Warranty</div></div>
           </div>
-          <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:10px">Key Features</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;margin-bottom:10px">Key Features</div>
           <div class="feat-list">${p.feats.map(f=>`<div class="feat-row"><div class="feat-dot">${checkSVG()}</div>${f}</div>`).join('')}</div>
           <div class="pd-price-wrap">
             <div class="pd-price">${fmt(p.price)}</div>
@@ -1018,18 +1047,18 @@ function pageAbout(){
             <div class="why-item"><div class="wd">${checkSVG()}</div>${w}</div>`).join('')}
           </div>
           <div style="background:var(--n);border-radius:14px;padding:28px">
-            <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:16px">Our Two Brands</div>
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:16px">Our Two Brands</div>
             <div style="background:rgba(232,82,26,.1);border:1px solid rgba(232,82,26,.2);border-radius:10px;padding:16px;margin-bottom:12px;cursor:pointer" onclick="go('apexo')">
-              <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#E8521A;margin-bottom:4px">APEXO</div>
-              <div style="font-size:13px;color:rgba(255,255,255,.5)">Industrial submersible pumps · 3″ &amp; 4″ bore · 1–2 HP · ISI Certified</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:#E8521A;margin-bottom:4px">APEXO</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.5)">Industrial submersible pumps &middot; 3&Prime; &amp; 4&Prime; bore &middot; 0.5 to 3 HP</div>
             </div>
             <div style="background:rgba(77,168,196,.08);border:1px solid rgba(77,168,196,.2);border-radius:10px;padding:16px;cursor:pointer" onclick="go('vivotek')">
-              <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#4DA8C4;margin-bottom:4px">VIVOTEK</div>
-              <div style="font-size:13px;color:rgba(255,255,255,.5)">Premium borewell pumps · 3″ &amp; 4″ bore · 1–2 HP · ISI Certified</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:#4DA8C4;margin-bottom:4px">VIVOTEK</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.5)">Premium borewell pumps &middot; 3&Prime; &amp; 4&Prime; bore &middot; 0.5 to 3 HP</div>
             </div>
             <div class="info-box" style="margin-top:16px">
               <p>Our success is driven by trust, innovation, and a dedication to customer satisfaction. As we continue to grow, our mission remains the same: to provide dependable products that customers can rely on for years to come.</p>
-              <p style="font-family:'Syne',sans-serif;font-weight:700;color:rgba(255,255,255,.75)">— Sikhu Innovations Pvt. Ltd.</p>
+              <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:rgba(255,255,255,.75)">— Sikhu Innovations Pvt. Ltd.</p>
             </div>
           </div>
         </div>
@@ -1073,6 +1102,12 @@ function pageContact(){
               <div><div style="font-weight:600">sikhu.limited@gmail.com</div><div style="font-size:12px;color:var(--mu)">Business &amp; dealer enquiries</div></div>
             </div>
             <div class="ci-row">
+              <div class="ci-ico" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border:none">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <div><a href="https://www.instagram.com/sikhu.innovations?igsh=MXg2YTJ5cTN3bTI1NQ==" target="_blank" rel="noopener" style="font-weight:600;color:inherit;text-decoration:none" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color=''">@sikhu.innovations</a><div style="font-size:12px;color:var(--mu)">Follow us on Instagram</div></div>
+            </div>
+            <div class="ci-row">
               <div class="ci-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
               <div><div style="font-weight:600">Monday – Saturday, 9 AM – 6 PM</div><div style="font-size:12px;color:var(--mu)">Indian Standard Time</div></div>
             </div>
@@ -1082,15 +1117,15 @@ function pageContact(){
             </div>
           </div>
           <div style="background:var(--bg);border:1.5px solid var(--bd);border-radius:14px;padding:24px;margin-top:8px">
-            <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:16px">Our Brands</div>
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;margin-bottom:16px">Our Brands</div>
             <div onclick="go('apexo')" style="display:flex;align-items:center;gap:12px;padding:12px;border:1.5px solid var(--bd);border-radius:10px;cursor:pointer;background:#fff;margin-bottom:10px;transition:all .18s" onmouseover="this.style.borderColor='#E8521A'" onmouseout="this.style.borderColor='var(--bd)'">
-              <div style="width:40px;height:40px;background:rgba(232,82,26,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:10px;font-weight:800;color:#E8521A;flex-shrink:0">APX</div>
-              <div><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:#E8521A">APEXO</div><div style="font-size:12px;color:var(--mu)">Industrial submersible pumps</div></div>
+              <div style="width:40px;height:40px;background:rgba(232,82,26,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:800;color:#E8521A;flex-shrink:0">APX</div>
+              <div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:#E8521A">APEXO</div><div style="font-size:12px;color:var(--mu)">Industrial submersible pumps</div></div>
               <div style="margin-left:auto;color:var(--lm)">›</div>
             </div>
             <div onclick="go('vivotek')" style="display:flex;align-items:center;gap:12px;padding:12px;border:1.5px solid var(--bd);border-radius:10px;cursor:pointer;background:#fff;transition:all .18s" onmouseover="this.style.borderColor='#4DA8C4'" onmouseout="this.style.borderColor='var(--bd)'">
-              <div style="width:40px;height:40px;background:rgba(77,168,196,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:10px;font-weight:800;color:#4DA8C4;flex-shrink:0">VTK</div>
-              <div><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:#4DA8C4">VIVOTEK</div><div style="font-size:12px;color:var(--mu)">Premium borewell pumps</div></div>
+              <div style="width:40px;height:40px;background:rgba(77,168,196,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:800;color:#4DA8C4;flex-shrink:0">VTK</div>
+              <div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:#4DA8C4">VIVOTEK</div><div style="font-size:12px;color:var(--mu)">Premium borewell pumps</div></div>
               <div style="margin-left:auto;color:var(--lm)">›</div>
             </div>
           </div>
@@ -1132,7 +1167,7 @@ function pageCart(){
     <div class="empty" style="padding:60px 20px">
       <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:var(--bd)"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
       <div class="empty" style="padding:16px 0 0">
-        <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px">Your cart is empty</div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px">Your cart is empty</div>
         <p style="margin-bottom:20px;color:var(--mu)">Add some pumps to get started!</p>
         <button class="btn btn-p" onclick="go('products')">Browse Products</button>
       </div>
@@ -1262,7 +1297,7 @@ function onPaySuccess(resp){
       <div style="width:80px;height:80px;background:var(--o);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px">
         <svg width="36" height="36" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
-      <div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;margin-bottom:12px">Order Confirmed! 🎉</div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;margin-bottom:12px">Order Confirmed! 🎉</div>
       <p style="color:var(--mu);font-size:15px;line-height:1.7;margin-bottom:24px">Payment successful! A confirmation will be sent to <strong>${em}</strong>. Our team will contact you for delivery coordination.</p>
       <div style="background:var(--bg);border:1.5px solid var(--bd);border-radius:12px;padding:16px;margin-bottom:28px;text-align:left">
         <div style="font-size:12px;color:var(--lm);margin-bottom:5px">Payment Reference ID</div>
@@ -1311,3 +1346,5 @@ refreshBadge();
 </script>
 </body>
 </html>
+
+
