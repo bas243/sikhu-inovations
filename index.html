@@ -433,18 +433,14 @@ img{max-width:100%}
         <div class="fh" style="color:#1A52D4">APEXO</div>
         <ul class="flinks">
           <li><a href="#apexo" onclick="go('apexo')">Submersible Pumps</a></li>
-          <li><a href="#apexo" onclick="go('apexo')">3 Inch Bore Pumps</a></li>
-          <li><a href="#apexo" onclick="go('apexo')">4 Inch Bore Pumps</a></li>
-          <li><a href="#apexo" onclick="go('apexo')">0.5 HP to 3 HP Range</a></li>
+          <li><a href="#apexo" onclick="go('apexo')">Self-Priming Pumps</a></li>
         </ul>
       </div>
       <div>
         <div class="fh" style="color:#4DA8C4">VIVOTEK</div>
         <ul class="flinks">
           <li><a href="#vivotek" onclick="go('vivotek')">Submersible Pumps</a></li>
-          <li><a href="#vivotek" onclick="go('vivotek')">3 Inch Bore Pumps</a></li>
-          <li><a href="#vivotek" onclick="go('vivotek')">4 Inch Bore Pumps</a></li>
-          <li><a href="#vivotek" onclick="go('vivotek')">0.5 HP to 3 HP Range</a></li>
+          <li><a href="#vivotek" onclick="go('vivotek')">Self-Priming Pumps</a></li>
         </ul>
       </div>
       <div>
@@ -638,15 +634,8 @@ function prodGrid(list, filterId){
   const filterHtml = filterId ? `
     <div class="filters" id="fbar">
       <button class="f-btn on" onclick="filterGrid('all','${filterId}',this)">All</button>
-      ${filterId==='brand'?`
-        <button class="f-btn" onclick="filterGrid('apexo','${filterId}',this)">APEXO</button>
-        <button class="f-btn" onclick="filterGrid('vivotek','${filterId}',this)">VIVOTEK</button>
-        <button class="f-btn" onclick="filterGrid('3inch','${filterId}',this)">3 Inch</button>
-        <button class="f-btn" onclick="filterGrid('4inch','${filterId}',this)">4 Inch</button>
-      `:`
-        <button class="f-btn" onclick="filterGrid('3inch','${filterId}',this)">3 Inch</button>
-        <button class="f-btn" onclick="filterGrid('4inch','${filterId}',this)">4 Inch</button>
-      `}
+      <button class="f-btn" onclick="filterGrid('submersible','${filterId}',this)">Submersible Pumps</button>
+      <button class="f-btn" onclick="filterGrid('selfpriming','${filterId}',this)">Self-Priming Pumps</button>
     </div>` : '';
   return filterHtml + `<div class="g4" id="${filterId||'pg'}">${list.map(prodCard).join('')}</div>`;
 }
@@ -655,9 +644,12 @@ function filterGrid(cat, id, btn){
   document.querySelectorAll('#fbar .f-btn').forEach(b=>b.classList.remove('on'));
   btn.classList.add('on');
   const src = _filterSrc[id]||PRODS;
-  const out = cat==='all'?src:src.filter(p=>p.brand===cat||p.bore===cat);
+  const out = cat==='all' ? src
+    : cat==='submersible' ? src.filter(p=>!p.selfPriming)
+    : cat==='selfpriming' ? src.filter(p=>p.selfPriming)
+    : src.filter(p=>p.brand===cat||p.bore===cat);
   const g = document.getElementById(id);
-  if(g) g.innerHTML = out.length ? out.map(prodCard).join('') : `<div class="empty" style="grid-column:1/-1"><p>No products found.</p></div>`;
+  if(g) g.innerHTML = out.length ? out.map(prodCard).join('') : `<div class="empty" style="grid-column:1/-1"><p>Coming Soon — more products being added.</p></div>`;
 }
 
 /* ══ NAVIGATION ══ */
@@ -698,7 +690,7 @@ function pageHome(){
           </div>
           <div class="hero-stats">
             <div><div class="hs-n">0.5&ndash;5</div><div class="hs-l">HP Range</div></div>
-            <div><div class="hs-n">2</div><div class="hs-l">Trusted Brands</div></div>
+            <div><div class="hs-n">15+</div><div class="hs-l">Yrs Exp.</div></div>
             <div><div class="hs-n">Pan</div><div class="hs-l">India Reach</div></div>
             <div><div class="hs-n">24&times;7</div><div class="hs-l">Support</div></div>
           </div>
