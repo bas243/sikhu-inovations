@@ -75,14 +75,15 @@ img{max-width:100%}
 .pg-hero{background:var(--n);padding:64px 0 56px;position:relative;overflow:hidden}
 .pg-hero::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(26,82,212,.06);top:-200px;right:-150px;pointer-events:none}
 .pg-hero::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.02);bottom:-100px;left:-80px;pointer-events:none}
-.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(86,207,225,0.18);border:1.5px solid rgba(86,207,225,0.55);color:#7FE8F5;font-size:12px;font-weight:700;padding:5px 14px;border-radius:100px;margin-bottom:18px;letter-spacing:.4px;box-shadow:0 0 12px rgba(86,207,225,0.2)}
-.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#56CFE1;box-shadow:0 0 6px #56CFE1}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(232,82,26,.14);border:1px solid rgba(232,82,26,.28);color:#FF8C5A;font-size:12px;font-weight:700;padding:5px 13px;border-radius:100px;margin-bottom:6px;letter-spacing:.3px}
+.hero-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:#E8521A}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
 .pg-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,4.5vw,52px);font-weight:800;color:var(--w);letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
 .pg-hero p{color:rgba(255,255,255,.52);font-size:16px;line-height:1.75;max-width:500px;margin-bottom:30px}
 .hero-2col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero-stats{display:flex;gap:32px;margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08)}
-.hs-n{font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:var(--w)}
-.hs-l{font-size:12px;color:rgba(255,255,255,.36);margin-top:2px}
+.hero-stats{display:flex;gap:20px;margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
+.hs-n{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;color:var(--w)}
+.hs-l{font-size:11px;color:rgba(255,255,255,.36);margin-top:2px}
 .hero-visual{display:flex;flex-direction:column;gap:14px}
 .hv-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:14px;transition:all .2s;cursor:pointer}
 .hv-card:hover{background:rgba(255,255,255,.09);transform:translateX(4px)}
@@ -682,7 +683,10 @@ function pageHome(){
     <div class="con">
       <div class="hero-2col">
         <div>
-          <div class="hero-badge">Trusted Indian Manufacturer</div>
+          <div class="hero-badges">
+            <div class="hero-badge">Trusted Indian Manufacturer</div>
+            <div class="hero-badge" style="background:rgba(232,82,26,.1);border-color:rgba(232,82,26,.35);color:#FF8C5A">ISO Certified</div>
+          </div>
           <h1>Powering India's<br>Water Supply.</h1>
           <p>Sikhu Innovations Pvt. Ltd. manufactures premium submersible pumps through two trusted brands — <strong style="color:#1A52D4">APEXO</strong> and <strong style="color:#4DA8C4">VIVOTEK</strong> — for agriculture, homes, and industry.</p>
           <div class="flex gap12">
@@ -690,7 +694,8 @@ function pageHome(){
           </div>
           <div class="hero-stats">
             <div><div class="hs-n">0.5&ndash;5</div><div class="hs-l">HP Range</div></div>
-            <div><div class="hs-n">15+</div><div class="hs-l">Yrs Exp.</div></div>
+            <div><div class="hs-n">15+</div><div class="hs-l">Years</div></div>
+            <div><div class="hs-n" style="font-size:15px">ISO</div><div class="hs-l">Certified</div></div>
             <div><div class="hs-n">Pan</div><div class="hs-l">India Reach</div></div>
             <div><div class="hs-n">24&times;7</div><div class="hs-l">Support</div></div>
           </div>
@@ -848,7 +853,7 @@ function pageApexo(){
     <div class="con">
       <div class="hero-badge">Sikhu Innovations Brand</div>
       <h1>APEXO</h1>
-      <p>Industrial-grade submersible pumps built for reliable performance in borewells. Available in 3-inch and 4-inch bore sizes with 1 to 2 HP power options.</p>
+      <p>Industrial-grade submersible pumps built for reliable performance in borewells. Available in 3-inch and 4-inch bore sizes with 0.5 HP to 5 HP power options.</p>
       <div class="flex gap12">
         <button class="btn btn-p" onclick="go('contact')">Contact Us</button>
         <button class="btn btn-olw" onclick="go('vivotek')">View VIVOTEK →</button>
@@ -883,7 +888,7 @@ function pageVivotek(){
     <div class="con">
       <div class="hero-badge">Sikhu Innovations Brand</div>
       <h1>VIVOTEK</h1>
-      <p>Premium submersible pump solutions engineered for superior water lifting capacity. Available in 3-inch and 4-inch bore sizes with 1 to 2 HP power options.</p>
+      <p>Premium submersible pump solutions engineered for superior water lifting capacity. Available in 3-inch and 4-inch bore sizes with 0.5 HP to 5 HP power options.</p>
       <div class="flex gap12">
         <button class="btn btn-p" onclick="go('contact')">Contact Us</button>
         <button class="btn btn-olw" onclick="go('apexo')">View APEXO →</button>
