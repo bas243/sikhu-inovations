@@ -64,8 +64,8 @@ img{max-width:100%}
 .nav-links{display:flex;list-style:none;gap:2px;flex:1}
 .nav-links a{display:block;color:rgba(255,255,255,.6);font-size:13.5px;font-weight:500;padding:7px 12px;border-radius:7px;transition:all .18s}
 .nav-links a:hover,.nav-links a.act{color:var(--w);background:rgba(255,255,255,.1)}
-.nav-links a.brand-link{color:rgba(26,82,212,.85)}
-.nav-links a.brand-link:hover,.nav-links a.brand-link.act{color:var(--w);background:var(--o)}
+.nav-links a.brand-link{color:#E8521A;font-weight:700}
+.nav-links a.brand-link:hover,.nav-links a.brand-link.act{color:var(--w);background:#E8521A}
 .nav-r{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0}
 .nav-email{font-size:12px;color:rgba(255,255,255,.35)}
 .nav-cart-btn{position:relative;width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);color:var(--w);display:flex;align-items:center;justify-content:center;transition:all .18s;cursor:pointer}
@@ -428,6 +428,10 @@ img{max-width:100%}
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             @sikhu.innovations
           </a>
+          <a href="https://www.facebook.com/profile.php?id=61587179095133" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:8px;color:rgba(255,255,255,.55);font-size:13px;transition:color .2s" onmouseover="this.style.color='#1877F2'" onmouseout="this.style.color='rgba(255,255,255,.55)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            Facebook Page
+          </a>
         </div>
       </div>
       <div>
@@ -480,78 +484,168 @@ const CFG = {
    PRODUCT DATA  ⚠️ Update prices before launch
 ══════════════════════════════════════════════════ */
 const PRODS = [
-  {id:1, brand:'apexo', bname:'APEXO', bore:'3inch',
-   name:'Apexo 1 HP 10 Stage Submersible Pump (3 Inch)',
-   sdesc:'Compact and energy-efficient 3-inch submersible pump for domestic water supply and agricultural applications.',
-   desc:'The 1 HP 10 Stage 3-Inch Submersible Pump delivers reliable performance and efficient water lifting from borewells. Built with high-quality components, it ensures durability, low maintenance, and long service life.',
-   feats:['Energy-efficient motor','Reliable water discharge','Corrosion-resistant construction','Low maintenance','Long operational life'],
-   specs:{power:'1 HP',stages:'10',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}, price:3850, orig:4500},
-  {id:2, brand:'apexo', bname:'APEXO', bore:'3inch',
+  // ── APEXO 3 INCH ──
+  {id:1, brand:'apexo', bname:'APEXO', bore:'3inch', selfPriming:false,
+   name:'Apexo 1.0 HP 13 Stage Submersible Pump (3 Inch)',
+   sdesc:'Compact 3-inch submersible pump for domestic water supply and agricultural irrigation.',
+   desc:'The Apexo 1.0 HP 13 Stage 3-Inch Submersible Pump delivers reliable performance and efficient water lifting from borewells. Built with high-quality components for durability and long service life.',
+   feats:['Energy-efficient 1 HP motor','13-stage high head output','Corrosion-resistant construction','Low maintenance design','Suitable for agriculture & domestic use'],
+   specs:{power:'1.0 HP',stages:'13',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:2, brand:'apexo', bname:'APEXO', bore:'3inch', selfPriming:false,
    name:'Apexo 1.5 HP 15 Stage Submersible Pump (3 Inch)',
-   sdesc:'High-performance submersible pump suitable for deeper borewells and agricultural irrigation.',
-   desc:'The 1.5 HP 15 Stage 3-Inch Submersible Pump is engineered for superior water lifting capacity and consistent performance. Ideal for farms, gardens, and domestic water supply systems.',
-   feats:['Superior water lifting capacity','Consistent performance','Ideal for farms and gardens','Single-phase operation','Corrosion-resistant body'],
-   specs:{power:'1.5 HP',stages:'15',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}, price:5200, orig:6200},
-  {id:3, brand:'apexo', bname:'APEXO', bore:'3inch',
-   name:'Apexo 2 HP 10 Stage Submersible Pump (3 Inch)',
-   sdesc:'Heavy-duty submersible pump designed for high water demand applications.',
-   desc:'The 2 HP 10 Stage 3-Inch Submersible Pump provides powerful performance and dependable operation for agricultural and commercial water supply requirements.',
-   feats:['Powerful 2 HP motor','High water output','Commercial-grade durability','Dependable operation','Low power consumption'],
-   specs:{power:'2 HP',stages:'10',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}, price:6800, orig:8000},
-  {id:4, brand:'apexo', bname:'APEXO', bore:'4inch',
-   name:'Apexo 1 HP 10 Stage Submersible Pump (4 Inch)',
+   sdesc:'High-performance 3-inch submersible pump for deeper borewells and farm irrigation.',
+   desc:'The Apexo 1.5 HP 15 Stage 3-Inch Submersible Pump is engineered for superior water lifting capacity. Ideal for farms, gardens, and domestic water supply with consistent performance.',
+   feats:['Superior water lifting capacity','15-stage high head design','Ideal for farms and gardens','Single-phase operation','Corrosion-resistant body'],
+   specs:{power:'1.5 HP',stages:'15',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:3, brand:'apexo', bname:'APEXO', bore:'3inch', selfPriming:false,
+   name:'Apexo 2.0 HP 20 Stage Submersible Pump (3 Inch)',
+   sdesc:'Heavy-duty 3-inch submersible pump for high water demand and deep borewells.',
+   desc:'The Apexo 2.0 HP 20 Stage 3-Inch Submersible Pump provides powerful performance for agricultural and commercial water supply. 20-stage design ensures high head and consistent discharge.',
+   feats:['Powerful 2 HP motor','20-stage high head output','Commercial-grade durability','Dependable deep-borewell operation','Low power consumption'],
+   specs:{power:'2.0 HP',stages:'20',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}},
+  // ── APEXO 4 INCH ──
+  {id:4, brand:'apexo', bname:'APEXO', bore:'4inch', selfPriming:false,
+   name:'Apexo 1.0 HP 10 Stage Submersible Pump (4 Inch)',
    sdesc:'Durable 4-inch submersible pump for efficient water extraction from borewells.',
-   desc:'Manufactured with precision engineering, this 1 HP 10 Stage 4-Inch Submersible Pump ensures smooth operation, energy savings, and reliable performance in domestic and agricultural applications.',
-   feats:['Precision engineered','Energy-saving operation','Reliable performance','Domestic & agricultural use','Long service life'],
-   specs:{power:'1 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}, price:4350, orig:5100},
-  {id:5, brand:'apexo', bname:'APEXO', bore:'4inch',
+   desc:'The Apexo 1.0 HP 10 Stage 4-Inch Submersible Pump ensures smooth operation, energy savings, and reliable performance in domestic and agricultural applications.',
+   feats:['Precision engineered 4-inch design','Energy-saving operation','Reliable borewell performance','Domestic & agricultural use','Long service life'],
+   specs:{power:'1.0 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:5, brand:'apexo', bname:'APEXO', bore:'4inch', selfPriming:false,
+   name:'Apexo 1.5 HP 12 Stage Submersible Pump (4 Inch)',
+   sdesc:'Powerful 4-inch submersible pump for medium to high water lifting requirements.',
+   desc:'The Apexo 1.5 HP 12 Stage 4-Inch Submersible Pump delivers high efficiency and dependable performance for farms, households, and irrigation systems.',
+   feats:['High efficiency 1.5 HP motor','12-stage consistent output','Farm & household use','Medium-high lift capacity','Robust construction'],
+   specs:{power:'1.5 HP',stages:'12',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:6, brand:'apexo', bname:'APEXO', bore:'4inch', selfPriming:false,
    name:'Apexo 1.5 HP 15 Stage Submersible Pump (4 Inch)',
-   sdesc:'Powerful and efficient submersible pump for medium to high water lifting requirements.',
-   desc:'The 1.5 HP 15 Stage 4-Inch Submersible Pump is designed to deliver high efficiency and dependable performance in farms, households, and irrigation systems.',
-   feats:['High efficiency design','Dependable performance','Farm & household use','Medium-high lift capacity','Robust construction'],
-   specs:{power:'1.5 HP',stages:'15',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}, price:5950, orig:7000},
-  {id:6, brand:'apexo', bname:'APEXO', bore:'4inch',
-   name:'Apexo 2 HP 10 Stage Submersible Pump (4 Inch)',
-   sdesc:'High-capacity submersible pump built for demanding agricultural and commercial applications.',
-   desc:'The 2 HP 10 Stage 4-Inch Submersible Pump combines robust construction with efficient operation, ensuring reliable water supply and long-lasting performance.',
-   feats:['Heavy-duty construction','Efficient operation','Agricultural & commercial grade','Reliable water supply','Long-lasting performance'],
-   specs:{power:'2 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}, price:7600, orig:9000},
-  {id:7, brand:'vivotek', bname:'VIVOTEK', bore:'3inch',
-   name:'Vivotek 1 HP 10 Stage Submersible Pump (3 Inch)',
-   sdesc:'Compact and energy-efficient 3-inch submersible pump for domestic water supply and agricultural applications.',
-   desc:'The 1 HP 10 Stage 3-Inch Submersible Pump delivers reliable performance and efficient water lifting from borewells. Built with high-quality components, it ensures durability, low maintenance, and long service life.',
-   feats:['Energy-efficient motor','Reliable water discharge','Corrosion-resistant construction','Low maintenance','Long operational life'],
-   specs:{power:'1 HP',stages:'10',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}, price:4150, orig:4900},
-  {id:8, brand:'vivotek', bname:'VIVOTEK', bore:'3inch',
+   sdesc:'High-stage 4-inch submersible pump for deeper borewells and greater head requirements.',
+   desc:'The Apexo 1.5 HP 15 Stage 4-Inch Submersible Pump combines power and efficiency for high-head applications. Ideal for medium-depth borewells requiring reliable discharge.',
+   feats:['1.5 HP efficient motor','15-stage high head output','Ideal for medium-depth borewells','Corrosion-resistant body','Long operational life'],
+   specs:{power:'1.5 HP',stages:'15',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:7, brand:'apexo', bname:'APEXO', bore:'4inch', selfPriming:false,
+   name:'Apexo 2.0 HP 10 Stage Submersible Pump (4 Inch)',
+   sdesc:'Heavy-duty 4-inch submersible pump for agricultural and commercial water supply.',
+   desc:'The Apexo 2.0 HP 10 Stage 4-Inch Submersible Pump combines robust construction with efficient operation, ensuring reliable water supply and long-lasting performance.',
+   feats:['Heavy-duty 2 HP motor','10-stage reliable output','Agricultural & commercial grade','Reliable water supply','Long-lasting performance'],
+   specs:{power:'2.0 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:8, brand:'apexo', bname:'APEXO', bore:'4inch', selfPriming:false,
+   name:'Apexo 2.0 HP 18 Stage Submersible Pump (4 Inch)',
+   sdesc:'High-stage 4-inch pump for demanding deep borewell and high-head applications.',
+   desc:'The Apexo 2.0 HP 18 Stage 4-Inch Submersible Pump is built for high-head water lifting in deep borewells. Ideal for irrigation and water supply in challenging terrains.',
+   feats:['2 HP high-performance motor','18-stage maximum head output','Deep borewell specialist','Corrosion-resistant materials','Low maintenance design'],
+   specs:{power:'2.0 HP',stages:'18',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:9, brand:'apexo', bname:'APEXO', bore:'4inch', selfPriming:false,
+   name:'Apexo 3.0 HP 8 Stage Submersible Pump (4 Inch)',
+   sdesc:'Powerful 3 HP 4-inch pump for large-scale agricultural and commercial applications.',
+   desc:'The Apexo 3.0 HP 8 Stage 4-Inch Submersible Pump delivers high discharge rate with powerful 3 HP motor. Designed for farms, industries, and large-scale water extraction needs.',
+   feats:['Powerful 3 HP motor','High discharge rate','Industrial-grade construction','Large-scale agricultural use','Durable & reliable'],
+   specs:{power:'3.0 HP',stages:'8',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:10, brand:'apexo', bname:'APEXO', bore:'4inch', selfPriming:false,
+   name:'Apexo 3.0 HP 10 Stage Submersible Pump (4 Inch)',
+   sdesc:'High-capacity 3 HP 4-inch pump for demanding water supply needs.',
+   desc:'The Apexo 3.0 HP 10 Stage 4-Inch Submersible Pump combines powerful output with reliable performance. Suitable for commercial irrigation, industries, and high-demand water supply.',
+   feats:['3 HP powerful motor','10-stage high head output','Commercial & industrial grade','High flow rate','Long service life'],
+   specs:{power:'3.0 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:11, brand:'apexo', bname:'APEXO', bore:'4inch', selfPriming:false,
+   name:'Apexo 5.0 HP 10 Stage Submersible Pump (4 Inch)',
+   sdesc:'Premium 5 HP heavy-duty 4-inch pump for industrial and large farm applications.',
+   desc:'The Apexo 5.0 HP 10 Stage 4-Inch Submersible Pump is the most powerful in the APEXO range. Built for industrial-scale water extraction, large farms, and high-capacity water supply.',
+   feats:['5 HP heavy-duty motor','Industrial-grade performance','Maximum discharge capacity','Three-phase compatible','Premium build quality'],
+   specs:{power:'5.0 HP',stages:'10',bore:'4 Inch',phase:'Three Phase',voltage:'415V'}},
+  // ── APEXO SELF PRIMING ──
+  {id:12, brand:'apexo', bname:'APEXO', bore:'selfpriming', selfPriming:true,
+   name:'Apexo 0.5 HP Self Priming Pump',
+   sdesc:'Compact self-priming pump for household and garden water supply.',
+   desc:'The Apexo 0.5 HP Self Priming Pump is ideal for domestic water transfer, garden irrigation, and small-scale water supply systems. Easy to install with automatic self-priming capability.',
+   feats:['Automatic self-priming','Compact & lightweight design','Ideal for household use','Easy installation','Low noise operation'],
+   specs:{power:'0.5 HP',stages:'1',bore:'Surface',phase:'Single Phase',voltage:'220V'}},
+  {id:13, brand:'apexo', bname:'APEXO', bore:'selfpriming', selfPriming:true,
+   name:'Apexo 1.0 HP Self Priming Pump',
+   sdesc:'Reliable 1 HP self-priming pump for domestic and small commercial water supply.',
+   desc:'The Apexo 1.0 HP Self Priming Pump delivers reliable water transfer for homes, gardens, and small commercial applications. Features automatic priming and durable construction.',
+   feats:['Automatic self-priming capability','1 HP reliable motor','Domestic & commercial use','Corrosion-resistant body','Long operational life'],
+   specs:{power:'1.0 HP',stages:'1',bore:'Surface',phase:'Single Phase',voltage:'220V'}},
+  // ── VIVOTEK 3 INCH ──
+  {id:14, brand:'vivotek', bname:'VIVOTEK', bore:'3inch', selfPriming:false,
+   name:'Vivotek 1.0 HP 13 Stage Submersible Pump (3 Inch)',
+   sdesc:'Compact 3-inch submersible pump for domestic water supply and agricultural irrigation.',
+   desc:'The Vivotek 1.0 HP 13 Stage 3-Inch Submersible Pump delivers reliable performance and efficient water lifting from borewells. Built with premium components for durability and long service life.',
+   feats:['Energy-efficient 1 HP motor','13-stage high head output','Corrosion-resistant construction','Low maintenance design','Suitable for agriculture & domestic use'],
+   specs:{power:'1.0 HP',stages:'13',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:15, brand:'vivotek', bname:'VIVOTEK', bore:'3inch', selfPriming:false,
    name:'Vivotek 1.5 HP 15 Stage Submersible Pump (3 Inch)',
-   sdesc:'High-performance submersible pump suitable for deeper borewells and agricultural irrigation.',
-   desc:'The 1.5 HP 15 Stage 3-Inch Submersible Pump is engineered for superior water lifting capacity and consistent performance. Ideal for farms, gardens, and domestic water supply systems.',
-   feats:['Superior water lifting capacity','Consistent performance','Ideal for farms and gardens','Single-phase operation','Corrosion-resistant body'],
-   specs:{power:'1.5 HP',stages:'15',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}, price:5750, orig:6800},
-  {id:9, brand:'vivotek', bname:'VIVOTEK', bore:'3inch',
-   name:'Vivotek 2 HP 10 Stage Submersible Pump (3 Inch)',
-   sdesc:'Heavy-duty submersible pump designed for high water demand applications.',
-   desc:'The 2 HP 10 Stage 3-Inch Submersible Pump provides powerful performance and dependable operation for agricultural and commercial water supply requirements.',
-   feats:['Powerful 2 HP motor','High water output','Commercial-grade durability','Dependable operation','Low power consumption'],
-   specs:{power:'2 HP',stages:'10',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}, price:7350, orig:8700},
-  {id:10, brand:'vivotek', bname:'VIVOTEK', bore:'4inch',
-   name:'Vivotek 1 HP 10 Stage Submersible Pump (4 Inch)',
+   sdesc:'High-performance 3-inch submersible pump for deeper borewells and farm irrigation.',
+   desc:'The Vivotek 1.5 HP 15 Stage 3-Inch Submersible Pump is engineered for superior water lifting capacity. Ideal for farms, gardens, and domestic water supply with consistent performance.',
+   feats:['Superior water lifting capacity','15-stage high head design','Ideal for farms and gardens','Single-phase operation','Corrosion-resistant body'],
+   specs:{power:'1.5 HP',stages:'15',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:16, brand:'vivotek', bname:'VIVOTEK', bore:'3inch', selfPriming:false,
+   name:'Vivotek 2.0 HP 20 Stage Submersible Pump (3 Inch)',
+   sdesc:'Heavy-duty 3-inch submersible pump for high water demand and deep borewells.',
+   desc:'The Vivotek 2.0 HP 20 Stage 3-Inch Submersible Pump provides powerful performance for agricultural and commercial water supply. 20-stage design ensures high head and consistent discharge.',
+   feats:['Powerful 2 HP motor','20-stage high head output','Commercial-grade durability','Dependable deep-borewell operation','Low power consumption'],
+   specs:{power:'2.0 HP',stages:'20',bore:'3 Inch',phase:'Single Phase',voltage:'220V'}},
+  // ── VIVOTEK 4 INCH ──
+  {id:17, brand:'vivotek', bname:'VIVOTEK', bore:'4inch', selfPriming:false,
+   name:'Vivotek 1.0 HP 10 Stage Submersible Pump (4 Inch)',
    sdesc:'Durable 4-inch submersible pump for efficient water extraction from borewells.',
-   desc:'Manufactured with precision engineering, this 1 HP 10 Stage 4-Inch Submersible Pump ensures smooth operation, energy savings, and reliable performance in domestic and agricultural applications.',
-   feats:['Precision engineered','Energy-saving operation','Reliable performance','Domestic & agricultural use','Long service life'],
-   specs:{power:'1 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}, price:4850, orig:5700},
-  {id:11, brand:'vivotek', bname:'VIVOTEK', bore:'4inch',
+   desc:'The Vivotek 1.0 HP 10 Stage 4-Inch Submersible Pump ensures smooth operation, energy savings, and reliable performance in domestic and agricultural applications.',
+   feats:['Precision engineered 4-inch design','Energy-saving operation','Reliable borewell performance','Domestic & agricultural use','Long service life'],
+   specs:{power:'1.0 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:18, brand:'vivotek', bname:'VIVOTEK', bore:'4inch', selfPriming:false,
+   name:'Vivotek 1.5 HP 12 Stage Submersible Pump (4 Inch)',
+   sdesc:'Powerful 4-inch submersible pump for medium to high water lifting requirements.',
+   desc:'The Vivotek 1.5 HP 12 Stage 4-Inch Submersible Pump delivers high efficiency and dependable performance for farms, households, and irrigation systems.',
+   feats:['High efficiency 1.5 HP motor','12-stage consistent output','Farm & household use','Medium-high lift capacity','Robust construction'],
+   specs:{power:'1.5 HP',stages:'12',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:19, brand:'vivotek', bname:'VIVOTEK', bore:'4inch', selfPriming:false,
    name:'Vivotek 1.5 HP 15 Stage Submersible Pump (4 Inch)',
-   sdesc:'Powerful and efficient submersible pump for medium to high water lifting requirements.',
-   desc:'The 1.5 HP 15 Stage 4-Inch Submersible Pump is designed to deliver high efficiency and dependable performance in farms, households, and irrigation systems.',
-   feats:['High efficiency design','Dependable performance','Farm & household use','Medium-high lift capacity','Robust construction'],
-   specs:{power:'1.5 HP',stages:'15',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}, price:6550, orig:7700},
-  {id:12, brand:'vivotek', bname:'VIVOTEK', bore:'4inch',
-   name:'Vivotek 2 HP 10 Stage Submersible Pump (4 Inch)',
-   sdesc:'High-capacity submersible pump built for demanding agricultural and commercial applications.',
-   desc:'The 2 HP 10 Stage 4-Inch Submersible Pump combines robust construction with efficient operation, ensuring reliable water supply and long-lasting performance.',
-   feats:['Heavy-duty construction','Efficient operation','Agricultural & commercial grade','Reliable water supply','Long-lasting performance'],
-   specs:{power:'2 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}, price:8200, orig:9700},
+   sdesc:'High-stage 4-inch submersible pump for deeper borewells and greater head requirements.',
+   desc:'The Vivotek 1.5 HP 15 Stage 4-Inch Submersible Pump combines power and efficiency for high-head applications. Ideal for medium-depth borewells requiring reliable discharge.',
+   feats:['1.5 HP efficient motor','15-stage high head output','Ideal for medium-depth borewells','Corrosion-resistant body','Long operational life'],
+   specs:{power:'1.5 HP',stages:'15',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:20, brand:'vivotek', bname:'VIVOTEK', bore:'4inch', selfPriming:false,
+   name:'Vivotek 2.0 HP 10 Stage Submersible Pump (4 Inch)',
+   sdesc:'Heavy-duty 4-inch submersible pump for agricultural and commercial water supply.',
+   desc:'The Vivotek 2.0 HP 10 Stage 4-Inch Submersible Pump combines robust construction with efficient operation, ensuring reliable water supply and long-lasting performance.',
+   feats:['Heavy-duty 2 HP motor','10-stage reliable output','Agricultural & commercial grade','Reliable water supply','Long-lasting performance'],
+   specs:{power:'2.0 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:21, brand:'vivotek', bname:'VIVOTEK', bore:'4inch', selfPriming:false,
+   name:'Vivotek 2.0 HP 18 Stage Submersible Pump (4 Inch)',
+   sdesc:'High-stage 4-inch pump for demanding deep borewell and high-head applications.',
+   desc:'The Vivotek 2.0 HP 18 Stage 4-Inch Submersible Pump is built for high-head water lifting in deep borewells. Ideal for irrigation and water supply in challenging terrains.',
+   feats:['2 HP high-performance motor','18-stage maximum head output','Deep borewell specialist','Corrosion-resistant materials','Low maintenance design'],
+   specs:{power:'2.0 HP',stages:'18',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:22, brand:'vivotek', bname:'VIVOTEK', bore:'4inch', selfPriming:false,
+   name:'Vivotek 3.0 HP 8 Stage Submersible Pump (4 Inch)',
+   sdesc:'Powerful 3 HP 4-inch pump for large-scale agricultural and commercial applications.',
+   desc:'The Vivotek 3.0 HP 8 Stage 4-Inch Submersible Pump delivers high discharge rate with powerful 3 HP motor. Designed for farms, industries, and large-scale water extraction needs.',
+   feats:['Powerful 3 HP motor','High discharge rate','Industrial-grade construction','Large-scale agricultural use','Durable & reliable'],
+   specs:{power:'3.0 HP',stages:'8',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:23, brand:'vivotek', bname:'VIVOTEK', bore:'4inch', selfPriming:false,
+   name:'Vivotek 3.0 HP 10 Stage Submersible Pump (4 Inch)',
+   sdesc:'High-capacity 3 HP 4-inch pump for demanding water supply needs.',
+   desc:'The Vivotek 3.0 HP 10 Stage 4-Inch Submersible Pump combines powerful output with reliable performance. Suitable for commercial irrigation, industries, and high-demand water supply.',
+   feats:['3 HP powerful motor','10-stage high head output','Commercial & industrial grade','High flow rate','Long service life'],
+   specs:{power:'3.0 HP',stages:'10',bore:'4 Inch',phase:'Single Phase',voltage:'220V'}},
+  {id:24, brand:'vivotek', bname:'VIVOTEK', bore:'4inch', selfPriming:false,
+   name:'Vivotek 5.0 HP 10 Stage Submersible Pump (4 Inch)',
+   sdesc:'Premium 5 HP heavy-duty 4-inch pump for industrial and large farm applications.',
+   desc:'The Vivotek 5.0 HP 10 Stage 4-Inch Submersible Pump is the most powerful in the VIVOTEK range. Built for industrial-scale water extraction, large farms, and high-capacity water supply.',
+   feats:['5 HP heavy-duty motor','Industrial-grade performance','Maximum discharge capacity','Three-phase compatible','Premium build quality'],
+   specs:{power:'5.0 HP',stages:'10',bore:'4 Inch',phase:'Three Phase',voltage:'415V'}},
+  // ── VIVOTEK SELF PRIMING ──
+  {id:25, brand:'vivotek', bname:'VIVOTEK', bore:'selfpriming', selfPriming:true,
+   name:'Vivotek 0.5 HP Self Priming Pump',
+   sdesc:'Compact self-priming pump for household and garden water supply.',
+   desc:'The Vivotek 0.5 HP Self Priming Pump is ideal for domestic water transfer, garden irrigation, and small-scale water supply systems. Easy to install with automatic self-priming capability.',
+   feats:['Automatic self-priming','Compact & lightweight design','Ideal for household use','Easy installation','Low noise operation'],
+   specs:{power:'0.5 HP',stages:'1',bore:'Surface',phase:'Single Phase',voltage:'220V'}},
+  {id:26, brand:'vivotek', bname:'VIVOTEK', bore:'selfpriming', selfPriming:true,
+   name:'Vivotek 1.0 HP Self Priming Pump',
+   sdesc:'Reliable 1 HP self-priming pump for domestic and small commercial water supply.',
+   desc:'The Vivotek 1.0 HP Self Priming Pump delivers reliable water transfer for homes, gardens, and small commercial applications. Features automatic priming and durable construction.',
+   feats:['Automatic self-priming capability','1 HP reliable motor','Domestic & commercial use','Corrosion-resistant body','Long operational life'],
+   specs:{power:'1.0 HP',stages:'1',bore:'Surface',phase:'Single Phase',voltage:'220V'}},
 ];
 
 /* ══ CART (localStorage) ══ */
@@ -695,7 +789,7 @@ function pageHome(){
           <div class="hero-stats">
             <div><div class="hs-n">0.5&ndash;5</div><div class="hs-l">HP Range</div></div>
             <div><div class="hs-n">15+</div><div class="hs-l">Years</div></div>
-            <div><div class="hs-n" style="font-size:15px">ISO</div><div class="hs-l">Certified</div></div>
+            <div><div class="hs-n">ISO</div><div class="hs-l">Certified</div></div>
             <div><div class="hs-n">Pan</div><div class="hs-l">India Reach</div></div>
             <div><div class="hs-n">24&times;7</div><div class="hs-l">Support</div></div>
           </div>
@@ -703,12 +797,12 @@ function pageHome(){
         <div class="hero-visual">
           <div class="hv-card" onclick="go('apexo')">
             <div class="hv-mark">APX</div>
-            <div><div class="hv-name">APEXO</div><div class="hv-sub">Industrial-grade submersible pumps · 6 models</div></div>
+            <div><div class="hv-name">APEXO</div><div class="hv-sub">Industrial-grade submersible pumps · 13 models</div></div>
             <div class="hv-arr">›</div>
           </div>
           <div class="hv-card" onclick="go('vivotek')">
             <div class="hv-mark" style="background:rgba(77,168,196,.15);color:#4DA8C4">VTK</div>
-            <div><div class="hv-name">VIVOTEK</div><div class="hv-sub">Premium borewell pump solutions · 6 models</div></div>
+            <div><div class="hv-name">VIVOTEK</div><div class="hv-sub">Premium borewell pump solutions · 13 models</div></div>
             <div class="hv-arr">›</div>
           </div>
           <div style="display:flex;justify-content:center;opacity:.25;margin-top:8px">${pumpSVG(120)}</div>
@@ -755,6 +849,7 @@ function pageHome(){
             <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#1A52D4;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Available in 3 Inch &amp; 4 Inch Bore</div>
             <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#1A52D4;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Energy Efficient &middot; Long Service Life</div>
             <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#1A52D4;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Ideal for Agriculture &amp; Domestic Use</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#E8521A;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>100% Copper Rooter &amp; Winding</div>
           </div>
           <div class="bc-bg">${pumpSVG(160)}</div>
         </div>
@@ -766,6 +861,7 @@ function pageHome(){
             <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#4DA8C4;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Available in 3 Inch &amp; 4 Inch Bore</div>
             <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#4DA8C4;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Corrosion-Resistant &middot; Low Maintenance</div>
             <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#4DA8C4;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Suitable for Deep Borewell Extraction</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--n)"><span style="width:20px;height:20px;border-radius:50%;background:#E8521A;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>100% Copper Rooter &amp; Winding</div>
           </div>
           <button class="btn btn-n btn-sm" onclick="event.stopPropagation();go('products')">View All Products &rarr;</button>
           <div class="bc-bg">${pumpSVG(160)}</div>
